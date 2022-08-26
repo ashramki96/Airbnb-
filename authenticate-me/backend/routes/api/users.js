@@ -19,6 +19,10 @@ const validateSignup = [
       .not()
       .isEmail()
       .withMessage('Username cannot be an email.'),
+    check('firstName')
+        .isLength({min: 1}),
+    check('lastName')
+        .isLength({min: 1}),
     check('password')
       .exists({ checkFalsy: true })
       .isLength({ min: 6 })
@@ -30,8 +34,8 @@ const validateSignup = [
     '/',
     validateSignup,
     async (req, res) => {
-      const { email, password, username } = req.body;
-      const user = await User.signup({ email, username, password });
+      const { email, password, username, firstName, lastName } = req.body;
+      const user = await User.signup({ firstName, lastName, email, username, password });
   
       await setTokenCookie(res, user);
   
