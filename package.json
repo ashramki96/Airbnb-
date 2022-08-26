@@ -1,6 +1,30 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "express-validator": "^6.14.2"
-  }
+    "express-validator": "^6.14.2",
+    "pg": "^8.8.0"
+  },
+  "name": "airbnb",
+  "description": "## Database Schema Design",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "sequelize": "sequelize",
+    "sequelize-cli": "sequelize-cli",
+    "start": "per-env",
+    "start:development": "nodemon ./bin/www",
+    "start:production": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashramki96/Airbnb-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashramki96/Airbnb-/issues"
+  },
+  "homepage": "https://github.com/ashramki96/Airbnb-#readme"
 }
