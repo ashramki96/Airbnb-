@@ -12,7 +12,7 @@ module.exports = {
      * }], {});
     */
 
-     await queryInterface.bulkInsert('Spot', [
+     await queryInterface.bulkInsert('Spots', [
       {
           ownerId: 1,
           address: "123 firstspot drive",
@@ -59,6 +59,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-     await queryInterface.bulkDelete('Spot', null, {});
+     await queryInterface.bulkDelete('Spots', null, {});
   }
 };
