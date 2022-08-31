@@ -48,7 +48,31 @@ module.exports = {
         userId: 1,
         review: "not great",
         stars: 3
-      }
+      },
+    //   {
+    //     spotId: 4,
+    //     userId: 4,
+    //     review: "average spot",
+    //     stars: 5
+    // },
+    //   {
+    //     spotId: 5,
+    //     userId: 4,
+    //     review: "the worst spot",
+    //     stars: 1
+    //   },
+    //   {
+    //     spotId: 5,
+    //     userId: 4,
+    //     review: "not great",
+    //     stars: 3
+    //   },
+    //   {
+    //     spotId: 6,
+    //     userId: 4,
+    //     review: "not great",
+    //     stars: 3
+    //   }
         
   ]);
   },

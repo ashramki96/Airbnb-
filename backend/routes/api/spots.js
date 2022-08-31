@@ -1,7 +1,9 @@
 const express = require('express');
-const { Spot, Review, SpotImage, sequelize} = require('../../db/models');
+const { Spot, Review, SpotImage, User, sequelize} = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { JsonWebTokenError } = require('jsonwebtoken');
+const user = require('../../db/models/user');
 
 
 const router = express.Router();
@@ -46,8 +48,8 @@ const validateSpotInfo = [
     handleValidationErrors
   ];
 
+//Get all spots
 router.get('/', async (req, res) => {
-
 
     const spots = await Spot.findAll({
         group: ["Reviews.spotId", "SpotImages.url"],
@@ -58,7 +60,7 @@ router.get('/', async (req, res) => {
 
         {
             model: SpotImage,
-            attributes: ["url"]
+            attributes: ["url"],
         }],
         attributes: {
 
@@ -66,12 +68,12 @@ router.get('/', async (req, res) => {
         },
 
     });
-
     return res.json({
         spots,
     });
 });
 
+//Create a spot
 router.post('/', validateSpotInfo, async (req, res) => {
     const {user} = req
     const {address, city, state, country, lat, lng, name, description, price} = req.body
@@ -81,6 +83,7 @@ router.post('/', validateSpotInfo, async (req, res) => {
     return res.json(newSpot)
 })
 
+//Add an image to a spot based on Spot's id
 router.post('/:spotid/images', async (req, res) => {
     const {user} = req
     const {url} = req.body
@@ -100,5 +103,117 @@ router.post('/:spotid/images', async (req, res) => {
         res.json({message: "Couldn't find spot"})
     }
 })
+
+// Get all spots owned by the current user
+router.get('/current', async (req, res) => {
+  const {user} = req
+  const spots = await Spot.findAll({
+    where: {
+      ownerId: user.id
+    },
+    group: ["Reviews.spotId", "SpotImages.url"],
+        include: [{
+            model: Review,
+            attributes: []
+        },
+
+        {
+            model: SpotImage,
+            attributes: ["url"],
+        }],
+        attributes: {
+
+            include: [[sequelize.fn("AVG", sequelize.col("Reviews.stars")), "avgRating"]],
+        },
+  })
+
+    return res.json(spots)
+  })
+
+
+//Get details for a spot from an id
+router.get('/:spotid', async (req, res) => {
+  const { spotid } = req.params
+  const numberReviews = await Review.count({
+    where: {
+      spotId: spotid
+    }
+  })
+  console.log("number of reviews : ", numberReviews)
+  const spot = await Spot.findByPk(spotid, {
+    
+    include: [{
+      model: Review,
+      attributes: []
+    },
+    {
+      model: SpotImage,
+      attributes: ["id", "url", "preview"]
+    },
+    {
+      model: User,
+      attributes: ["id", "firstName", "lastName"]
+    }],
+
+    attributes: {
+      include: [[sequelize.fn("AVG", sequelize.col("Reviews.stars")), "avgStarRating"]],
+    },
+  
+  })
+  let newSpot = spot.toJSON()
+  newSpot.numReviews = numberReviews
+  console.log(spot)
+  if (spot) return res.json(newSpot)
+  else {
+    res.statusCode = 404
+    res.json({ message: "spot does not exist with this id" })
+  }
+})
+//Edit a spot
+router.put('/:spotid', validateSpotInfo, async (req, res) => {
+  const { spotid } = req.params
+  const { address, city, state, country, lat, lng, name, description, price } = req.body
+  const spot = await Spot.findByPk(spotid)
+    if(address){
+      spot.address = address
+    }
+    if(city){
+      spot.city = city
+    }
+    if(state){
+      spot.state = state
+    }
+    if(country){
+      spot.country = country
+    }
+    if(lat){
+      spot.lat = lat
+    }
+    if(lng){
+      spot.lng = lng
+    }
+    if(name){
+      spot.name = name
+    }
+    if(description){
+      spot.descriptio = description
+    }
+    if(price){
+      spot.price = price
+    }
+
+    await spot.save()
+
+    if(spot) res.json(spot)
+    else {
+      res.statusCode = 404
+      res.json({ message: "spot does not exist with this id" })
+    }
+  
+
+})
+
+//Delete a spot
+
 
   module.exports = router;
