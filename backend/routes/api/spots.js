@@ -205,7 +205,7 @@ router.post('/:spotid/images', async (req, res) => {
 // })
 
 // GET all spots of current user lazy loaded
-router.get('/current', async (req, res) => {
+router.get('/current', requireAuth, async (req, res) => {
   const { user } = req
   const allSpots = []
   const spots = await Spot.findAll({
@@ -335,7 +335,7 @@ router.get('/:spotid', async (req, res) => {
 })
 
 //Edit a spot
-router.put('/:spotid', validateSpotInfo, async (req, res) => {
+router.put('/:spotid', requireAuth, validateSpotInfo, async (req, res) => {
   const { spotid } = req.params
   const { address, city, state, country, lat, lng, name, description, price } = req.body
   const spot = await Spot.findByPk(spotid)
@@ -380,7 +380,7 @@ router.put('/:spotid', validateSpotInfo, async (req, res) => {
 })
 
 //Delete a spot
-router.delete('/:spotid', async (req, res) => {
+router.delete('/:spotid', requireAuth, async (req, res) => {
   const { spotid } = req.params
   const spot = await Spot.findByPk(spotid)
   if (spot) {
