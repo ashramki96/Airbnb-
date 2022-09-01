@@ -21,7 +21,7 @@ module.exports = {
       {
         spotId: 1,
         url: 'placeholder url 2',
-        preview: true
+        preview: false
       },
 
       {
