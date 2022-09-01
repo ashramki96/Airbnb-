@@ -99,68 +99,108 @@ router.post('/', validateSpotInfo, async (req, res) => {
 })
 
 //Add an image to a spot based on Spot's id
-router.post('/:spotid/images', async (req, res) => {
-  const { user } = req
-  const { url } = req.body
-  const { spotid } = req.params
-  const spot = await Spot.findByPk(spotid)
-  if (spot) {
-    if (user.id === spot.ownerId) {
-      const newImg = await SpotImage.create({
-        url, preview: true, spotId: spotid
-      })
-      return res.json({ id: newImg.id, url: newImg.url, preview: newImg.preview })
-    }
-    else res.json({ message: "Only the owner of this spot can add an image" })
-  }
-  else {
-    res.statusCode = 404
-    res.json({
-      message: "Spot couldn't be found",
-      statusCode: 404
-    })
-  }
-})
+// router.post('/:spotid/images', async (req, res) => {
+//   const { user } = req
+//   const { url } = req.body
+//   const { spotid } = req.params
+//   const spot = await Spot.findByPk(spotid)
+//   if (spot) {
+//     if (user.id === spot.ownerId) {
+//       const newImg = await SpotImage.create({
+//         url, preview: true, spotId: spotid
+//       })
+//       return res.json({ id: newImg.id, url: newImg.url, preview: newImg.preview })
+//     }
+//     else res.json({ message: "Only the owner of this spot can add an image" })
+//   }
+//   else {
+//     res.statusCode = 404
+//     res.json({
+//       message: "Spot couldn't be found",
+//       statusCode: 404
+//     })
+//   }
+// })
 
-// Get all spots owned by the current user
+// // Get all spots owned by the current user
+// router.get('/current', async (req, res) => {
+//   const { user } = req
+//   const spots = await Spot.findAll({
+//     where: {
+//       ownerId: user.id
+//     },
+//     group: ["Reviews.spotId", "SpotImages.url"],
+//     include: [{
+//       model: Review,
+//       attributes: []
+//     },
+
+//     {
+//       model: SpotImage,
+//       attributes: ["url"],
+//       where: { preview: true }
+
+//     }],
+//     attributes: {
+
+//       include: [[sequelize.fn("AVG", sequelize.col("Reviews.stars")), "avgRating"]],
+//     },
+//   })
+
+//   for (let i = 0; i < spots.length; i++) {
+//     let getSpot = spots[i].toJSON()
+//     if (getSpot.SpotImages.length > 0) {
+//       getSpot.previewImage = getSpot.SpotImages[0].url
+//     }
+//     else getSpot.previewImage = ""
+
+//     delete getSpot.SpotImages
+//     spots[i] = getSpot
+//   }
+
+//   return res.json(spots)
+// })
+
+// GET all spots of current user lazy loaded
 router.get('/current', async (req, res) => {
   const { user } = req
+  const allSpots = []
   const spots = await Spot.findAll({
     where: {
       ownerId: user.id
     },
-    group: ["Reviews.spotId", "SpotImages.url"],
-    include: [{
-      model: Review,
-      attributes: []
-    },
-
-    {
-      model: SpotImage,
-      attributes: ["url"],
-      where: { preview: true }
-
-    }],
-    attributes: {
-
-      include: [[sequelize.fn("AVG", sequelize.col("Reviews.stars")), "avgRating"]],
-    },
   })
-
   for (let i = 0; i < spots.length; i++) {
-    let getSpot = spots[i].toJSON()
-    if (getSpot.SpotImages.length > 0) {
-      getSpot.previewImage = getSpot.SpotImages[0].url
+    const spot = spots[i]
+    const averageRating = await spot.getReviews({
+      attributes:
+        [[sequelize.fn("AVG", sequelize.col("stars")), "avgStarRating"]], raw: true, nest: true
+    })
+    const imageDetails = await spot.getSpotImages({ attributes: ["url"], raw: true, nest: true })
+    console.log("image details", imageDetails)
+    const spotDetails = {
+      id: spot.id,
+      ownerId: spot.ownerId,
+      address: spot.address,
+      city: spot.city,
+      state: spot.state,
+      country: spot.country,
+      lat: spot.lat,
+      lng: spot.lng,
+      name: spot.name,
+      description: spot.description,
+      price: spot.price,
+      createdAt: spot.createdAt,
+      updatedAt: spot.updatedAt,
+      avgRating: averageRating[0].avgStarRating,
+      previewImage: imageDetails[0].url
     }
-    else getSpot.previewImage = ""
 
-    delete getSpot.SpotImages
-    spots[i] = getSpot
+
+    allSpots.push(spotDetails)
   }
-
-  return res.json(spots)
+  res.json(allSpots)
 })
-
 
 //Get details for a spot from an id EAGER LOADED **issues with error handling**
 // router.get('/:spotid', async (req, res) => {
