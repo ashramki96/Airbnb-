@@ -30,13 +30,6 @@ module.exports = {
         preview: true
       },
 
-      {
-        spotId: 3,
-        url: 'placeholder url 4',
-        preview: true
-      },
-
-
     ]);
   },
 
