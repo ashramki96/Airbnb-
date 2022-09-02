@@ -80,11 +80,13 @@ router.put('/:bookingid', requireAuth, async (req, res) => {
     })
     if (!booking) {
         res.statusCode = 404
-        return res.json({ message: "Booking does not exist with given id" })
+        return res.json({ message: "Booking does not exist with given id" ,
+      statusCode: 404})
     }
     if (start < Date.parse(new Date())) {
         res.statusCode = 403
-        return res.json({ message: "Past bookings can't be modified" })
+        return res.json({ message: "Past bookings can't be modified",
+      statusCode: 403 })
     }
 
     if (end <= start) {

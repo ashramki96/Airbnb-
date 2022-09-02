@@ -132,7 +132,8 @@ router.put('/:reviewid', requireAuth, validateReview, async (req, res) => {
     const findReview = await Review.findByPk(reviewid)
     if(!findReview) {
         res.statusCode = 404
-        return res.json({ message: "Review couldn't be found" })
+        return res.json({ message: "Review couldn't be found",
+    statusCode: 404 })
     }
  
     const updatedReview = await Review.findByPk(reviewid)
