@@ -38,7 +38,7 @@ module.exports = {
         price: 10
       },
       {
-        ownerId: 1,
+        ownerId: 3,
           address: "789 thirdspot drive",
           city: "thirdCity",
           state: "thirdState",
