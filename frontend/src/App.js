@@ -9,9 +9,14 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser()).then(() => { 
+      setIsLoaded(true)
+      console.log(isLoaded)
+    
+    });
   }, [dispatch]);
 
+  console.log("hi", isLoaded)
   return isLoaded && (
     <Switch>
       <Route path="/login">

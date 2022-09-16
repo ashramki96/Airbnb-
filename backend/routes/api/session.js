@@ -82,7 +82,7 @@ router.delete(
         return res.json({
           user: user.toSafeObject()
         });
-      } else return res.json({});
+      } else return res.json(null); //changed this from ({}) to (null)
     }
   );
 
