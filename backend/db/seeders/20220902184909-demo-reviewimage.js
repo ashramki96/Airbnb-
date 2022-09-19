@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -11,23 +11,20 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('SpotImages', [
+     await queryInterface.bulkInsert('ReviewImages', [
       {
-        spotId: 1,
+        reviewId: 1,
         url: 'placeholder url 1',
-        preview: true
       },
 
       {
-        spotId: 2,
+        reviewId: 2,
         url: 'placeholder url 2',
-        preview: true
       },
 
       {
-        spotId: 3,
+        reviewId: 3,
         url: 'placeholder url 3',
-        preview: true
       },
 
     ]);
@@ -40,6 +37,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('SpotImages', null, {});
+    await queryInterface.bulkDelete('ReviewImages', null, {});
   }
 };
+

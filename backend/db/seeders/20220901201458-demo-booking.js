@@ -14,19 +14,19 @@ module.exports = {
      await queryInterface.bulkInsert('Bookings', [
       {
         spotId: 1,
-        userId: 1,
+        userId: 2,
         startDate: "2023-01-10",
         endDate: "2023-01-15"
       },
       {
-        spotId: 1,
-        userId: 2,
+        spotId: 2,
+        userId: 1,
         startDate: "2023-02-10",
         endDate: "2023-02-15"
       },
       {
-        spotId: 2,
-        userId: 2,
+        spotId: 3,
+        userId: 1,
         startDate: "2023-03-10",
         endDate: "2023-03-15"
       },

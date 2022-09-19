@@ -215,13 +215,13 @@ router.post('/', requireAuth, validateSpotInfo, async (req, res) => {
 //Add an image to a spot based on Spot's id
 router.post('/:spotid/images', requireAuth, async (req, res) => {
   const { user } = req
-  const { url } = req.body
+  const { url, preview } = req.body
   const { spotid } = req.params
   const spot = await Spot.findByPk(spotid)
   if (spot) {
     if (user.id === spot.ownerId) {
       const newImg = await SpotImage.create({
-        url, preview: true, spotId: spotid
+        url, preview: preview, spotId: spotid
       })
       return res.json({ id: newImg.id, url: newImg.url, preview: newImg.preview })
     }
@@ -368,7 +368,8 @@ router.put('/:spotid', requireAuth, validateSpotInfo, async (req, res) => {
   }
     else {
       res.statusCode = 404
-      res.json({ message: "spot does not exist with this id" })
+      res.json({ message: "spot does not exist with this id",
+    statusCode: 404})
     }
   
 
@@ -487,7 +488,8 @@ router.post('/:spotid/bookings', requireAuth, async (req, res) => {
    
     else { 
       res.statusCode = 403
-      res.json({ message: "Owner cannot make a booking" })
+      res.json({ message: "Owner cannot make a booking",
+    statusCode: 403 })
     }
   
     })
@@ -569,7 +571,8 @@ router.post('/:spotid/reviews', requireAuth, validateReview, async (req, res) =>
 
   if(findReview.length > 0){
     res.statusCode = 403
-    return res.json({message: "review already exists from current user"})
+    return res.json({message: "review already exists from current user",
+  statusCode: 403})
   }
   if (spot) {
       const newReview = await Review.create({
