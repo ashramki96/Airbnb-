@@ -23,23 +23,25 @@ export const getSpots = () => async (dispatch) => {
     }
 }
 
-export const getOneSpot = (spotId) => async (dispatch) => {
-    const response = await fetch(`/api/spots/${spotId}`)
-    if(response.ok){
-        const spot = await response.json()
-        dispatch(readOneSpot(spot))
-    }
-}
+// export const getOneSpot = (spotId) => async (dispatch) => {
+//     const response = await fetch(`/api/spots/${spotId}`)
+//     if(response.ok){
+//         const spot = await response.json()
+//         dispatch(readOneSpot(spot))
+//          return spot
+//     }
+//     return null
+// }
 
 const initalState = {
     
 }
 
 const spotsReducer = (state = initalState, action) => {
-    let allSpots
+    
     switch(action.type) {
         case READ:
-            
+            const allSpots = {}
             action.spots.Spots.forEach(spot => {
                 allSpots[spot.id] = spot
             });
@@ -47,12 +49,20 @@ const spotsReducer = (state = initalState, action) => {
                 ...state,
                 ...allSpots,
             }
-        case READ_ONE:
-            allSpots[action.spot.id] = action.spot
-            return {
-                ...allSpots
-            }
-            //UI broke after adding this part^
+        // case READ_ONE:
+        //     // const newState = {...state, 
+        //     //     [action.spot.id]: action.spot
+        //     // }
+        //     // return {
+        //     //     ...newState
+        //     // }
+        
+        //     const newState = [action.spot]
+
+            
+        
+            
+            
 
         default:
             return state

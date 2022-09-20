@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AllSpots from "./components/AllSpots";
+import SpotDetails from "./components/SpotDetails";
 
 
 function App() {
@@ -22,8 +23,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path = "/">
+          <Route exact path="/">
             <AllSpots />
+          </Route>
+          <Route path="/api/spots/:spotId">
+            <SpotDetails />
           </Route>
         </Switch>
       )}
