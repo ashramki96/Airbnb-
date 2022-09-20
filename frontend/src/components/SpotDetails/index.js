@@ -19,7 +19,13 @@ const SpotDetails = () => {
     if (!spot) return null
 
     return (
+        <div>
         <h1>{spot.name}</h1>
+        <h2>{spot.description}</h2>
+        <h3>{spot.address}</h3>
+        <h3>Rating: {spot.avgRating}</h3>
+        <div>{spot.previewImage}</div>
+        </div>
     )
 
 }
