@@ -34,29 +34,58 @@ export const deleteSpot = (data) => async dispatch => {
     }
 }
 
-export const createSpot = data => async dispatch => {
+// export const createSpotImage = data => async dispatch =>{
+//     console.log("The image URL is", data.image)
+//     console.log("The spot id is", data.id)
+//     const response = await csrfFetch(`/api/spots/${data.id}/images`, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     })
+// }
 
-    console.log("Create is being hit")
-    console.log("DATA is", data)
+
+export const createSpot = (imagePayload, payload) => async dispatch => {
+
+    console.log("thunk Create is being hit")
+    console.log("spot is", payload)
+    console.log("image payload is ", imagePayload)
     
         const response = await csrfFetch('/api/spots', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(payload)
         })
 
-        console.log("RESPONSE IS", response)
+        let imgResponse
+        let spot
 
+        console.log("RESPONSE" , response)
         if(response.ok) {
-            const spot = await response.json();
+        spot = await response.json();
+        
+        console.log("SPOT ID is", spot.id)
+
+         imgResponse = await csrfFetch(`/api/spots/${spot.id}/images`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(imagePayload)
+            })
+
+        }
+
+        console.log("Image response is" , imgResponse)
+        
+        if(response.ok && imgResponse.ok){
             dispatch(create(spot))
             return spot
         }
-        
-    
-   
 
 }
 

@@ -21,6 +21,8 @@ const CreateSpotForm = () => {
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
     const [state, setState] = useState("")
+    const [url, setUrl] = useState("")
+    const [preview, setPreview] = useState(false)
 
     const updateAddress = (e) => setAddress(e.target.value)
     const updateCity = (e) => setCity(e.target.value)
@@ -31,6 +33,8 @@ const CreateSpotForm = () => {
     const updateName = (e) => setName(e.target.value)
     const updatePrice = (e) => setPrice(e.target.value)
     const updateState = (e) => setState(e.target.value)
+    const updateUrl = (e) => setUrl(e.target.value)
+    const updatePreview = (e) => setPreview(!preview)
 
     
 
@@ -48,8 +52,16 @@ const CreateSpotForm = () => {
             price,
             state
         }
-        const createdSpot = await dispatch(createSpot(payload))
+
+        const imagePayload = {
+          url,
+          preview
+        }
+
+
+        const createdSpot = await dispatch(createSpot(imagePayload, payload))
         console.log("Payload id is", createdSpot.id)
+
          history.push(`/spots/${createdSpot.id}`)
       }
 
@@ -112,6 +124,15 @@ const CreateSpotForm = () => {
               type="text"
               value={state}
               onChange={updateState} />
+
+              <label for = "image">Image</label>
+              <input
+              type="text"
+              value={url}
+              onChange={updateUrl} />
+
+            <label for = "preview">Check to make this image your preview</label>
+            <input type="checkbox" value = {preview} onChange = {updatePreview}/>
               
             
             <button type="submit">Create New Spot</button>
