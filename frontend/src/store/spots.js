@@ -37,27 +37,26 @@ export const deleteSpot = (data) => async dispatch => {
 export const createSpot = data => async dispatch => {
 
     console.log("Create is being hit")
-    try {
-        const response = await csrfFetch(`/api/spots`, {
+    console.log("DATA is", data)
+    
+        const response = await csrfFetch('/api/spots', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application.json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         })
 
-        if(!response.ok){
-            const error = await response.json()
-        }
-        else {
+        console.log("RESPONSE IS", response)
+
+        if(response.ok) {
             const spot = await response.json();
-            dispatch(create(spot));
+            dispatch(create(spot))
             return spot
         }
-    }
-    catch (error) {
-        throw error
-    }
+        
+    
+   
 
 }
 

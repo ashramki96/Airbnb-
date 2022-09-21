@@ -15,10 +15,10 @@ const CreateSpotForm = () => {
     const [city, setCity] = useState("")
     const [country, setCountry] = useState("")
     const [description, setDescription] = useState("")
-    const [lat, setLat] = useState(0)
-    const [lng, setLng] = useState(0)
+    const [lat, setLat] = useState("")
+    const [lng, setLng] = useState("")
     const [name, setName] = useState("")
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState("")
     const [state, setState] = useState("")
 
     const updateAddress = (e) => setAddress(e.target.value)
@@ -54,47 +54,56 @@ const CreateSpotForm = () => {
           <div>
             <h2>Create a Spot</h2>
             <form onSubmit={handleSubmit} className = "form">
+
             <label htmlFor = "address">Address</label>
             <input
               id = "address"
               type="text"
               value={address}
               onChange={updateAddress} />
+
               <label for = "city">City</label>
             <input
               type="text"
               value={city}
               onChange={updateCity} />
+
               <label for = "country">Country</label>
               <input
               type="text"
               value={country}
               onChange={updateCountry} />
+
               <label for = "description">Description</label>
               <input
               type="text"
               value={description}
               onChange={updateDescription} />
+
               <label for = "lat">Lat</label>
               <input
-              type="number"
+              type="text"
               value={lat}
               onChange={updateLat} />
+
               <label for = "lng">Lng</label>
               <input
-              type="number"
+              type="text"
               value={lng}
               onChange={updateLng} />
+
               <label for = "name">Name</label>
               <input
               type="text"
               value={name}
               onChange={updateName} />
+
               <label for = "price">Price</label>
               <input
-              type="number"
+              type="text"
               value={price}
               onChange={updatePrice} />
+              
               <label for = "state">State</label>
               <input
               type="text"
