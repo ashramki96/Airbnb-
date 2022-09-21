@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Route, useParams } from 'react-router-dom';
 import { getSpots } from '../../store/spots';
 import SpotDetails from '../SpotDetails';
+import CreateSpotForm from '../CreateSpotForm';
 
 const AllSpots = () => {
 
@@ -22,13 +23,13 @@ const AllSpots = () => {
     <div>
         
         {spotsArr.map(spot => {
-           return (<Link key={spot.name} to ={`/api/spots/${spot.id}`}>
+           return (<Link key={spot.name} to ={`/spots/${spot.id}`}>
            <li key={spot.id}>{spot.name}</li>
            </Link>)
         })}
         
         
-
+        
     </div>
     )
 

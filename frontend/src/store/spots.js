@@ -1,17 +1,84 @@
-
+import { csrfFetch } from "./csrf"
 
 const READ = 'spots/READ'
-const READ_ONE = 'spots/READ_ONE'
+const CREATE = 'spots/CREATE'
+const DELETE = 'spots/DELETE'
 
 const read = spots => ({
     type: READ,
     spots
 })
 
-const readOneSpot = spot => ({
-    type: READ_ONE,
+const create = spot => ({
+    type: CREATE,
     spot
 })
+
+const deleteAction = spot => ({
+    type: DELETE,
+    spot
+})
+
+export const deleteSpot = (data) => async dispatch => {
+    console.log("DATA TO BE DELETED IS" , data)
+    const response = await csrfFetch(`/api/spots/${data.id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if(response.ok) {
+        const spot = await response.json();
+        dispatch(deleteAction(spot))
+        return spot
+    }
+}
+
+export const createSpot = data => async dispatch => {
+
+    console.log("Create is being hit")
+    try {
+        const response = await csrfFetch(`/api/spots`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application.json'
+            },
+            body: JSON.stringify(data)
+        })
+
+        if(!response.ok){
+            const error = await response.json()
+        }
+        else {
+            const spot = await response.json();
+            dispatch(create(spot));
+            return spot
+        }
+    }
+    catch (error) {
+        throw error
+    }
+
+}
+
+export const updateSpot = data => async dispatch => {
+    console.log("DATA is" , data)
+    console.log("DATA ID is", data.id)
+    const response = await csrfFetch(`/api/spots/${data.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    
+    if(response.ok) {
+        const spot = await response.json();
+        dispatch(create(spot))
+        return spot
+    }
+}
+
 
 export const getSpots = () => async (dispatch) => {
     const response = await fetch('/api/spots');
@@ -23,15 +90,7 @@ export const getSpots = () => async (dispatch) => {
     }
 }
 
-// export const getOneSpot = (spotId) => async (dispatch) => {
-//     const response = await fetch(`/api/spots/${spotId}`)
-//     if(response.ok){
-//         const spot = await response.json()
-//         dispatch(readOneSpot(spot))
-//          return spot
-//     }
-//     return null
-// }
+
 
 const initalState = {
     
@@ -58,12 +117,13 @@ const spotsReducer = (state = initalState, action) => {
         //     // }
         
         //     const newState = [action.spot]
-
+        case CREATE: 
             
-        
-            
-            
-
+                const newState = {
+                    ...state,
+                }
+                newState[action.spot.id] = action.spot
+                return newState
         default:
             return state
     }

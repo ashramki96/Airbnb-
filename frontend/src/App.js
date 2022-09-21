@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AllSpots from "./components/AllSpots";
 import SpotDetails from "./components/SpotDetails";
+import CreateSpotForm from "./components/CreateSpotForm";
 
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <AllSpots />
+            <CreateSpotForm />
           </Route>
-          <Route path="/api/spots/:spotId">
+          <Route path="/spots/:spotId">
             <SpotDetails />
           </Route>
         </Switch>
