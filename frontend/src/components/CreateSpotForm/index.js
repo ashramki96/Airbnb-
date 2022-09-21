@@ -10,6 +10,7 @@ const CreateSpotForm = () => {
   console.log("This is being rendered")
 
     const dispatch = useDispatch();
+    const history = useHistory();
     
     const [address, setAddress] = useState("")
     const [city, setCity] = useState("")
@@ -48,6 +49,8 @@ const CreateSpotForm = () => {
             state
         }
         const createdSpot = await dispatch(createSpot(payload))
+        console.log("Payload id is", createdSpot.id)
+         history.push(`/spots/${createdSpot.id}`)
       }
 
         return (
@@ -103,7 +106,7 @@ const CreateSpotForm = () => {
               type="text"
               value={price}
               onChange={updatePrice} />
-              
+
               <label for = "state">State</label>
               <input
               type="text"

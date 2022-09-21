@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import AllSpots from "./components/AllSpots";
 import SpotDetails from "./components/SpotDetails";
 import CreateSpotForm from "./components/CreateSpotForm";
+import AllSpotsCurrentUser from "./components/AllSpotsCurrentUser";
 
 
 function App() {
@@ -28,9 +29,13 @@ function App() {
             <AllSpots />
             <CreateSpotForm />
           </Route>
+          <Route path="/current/spots">
+            <AllSpotsCurrentUser />
+          </Route>
           <Route path="/spots/:spotId">
             <SpotDetails />
           </Route>
+          
         </Switch>
       )}
     </>
