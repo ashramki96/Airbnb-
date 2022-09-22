@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import UpdateSpotForm from '../UpdateSpotForm';
 import { deleteSpot } from '../../store/spots';
 import { useHistory } from 'react-router-dom';
+import AllReviewsSpot from '../AllReviewsSpot';
+import CreateReview from '../CreateReview';
 
 const SpotDetails = () => {
     const dispatch = useDispatch()
@@ -15,6 +17,7 @@ const SpotDetails = () => {
     console.log("THE SPOT IS", spot)
 
     if (!spot) return null
+
 
     const handleDelete = async (e) => {
         e.preventDefault();
@@ -31,6 +34,8 @@ const SpotDetails = () => {
         <h3>{spot.address}</h3>
         <h3>Rating: {spot.avgRating}</h3>
         <div>{spot.previewImage}</div>
+        <AllReviewsSpot />
+        <CreateReview />
         <button onClick = {handleDelete}>Delete Spot</button>
         <UpdateSpotForm />
         </div>
