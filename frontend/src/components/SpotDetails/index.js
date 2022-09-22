@@ -6,6 +6,8 @@ import { deleteSpot } from '../../store/spots';
 import { useHistory } from 'react-router-dom';
 import AllReviewsSpot from '../AllReviewsSpot';
 import CreateReview from '../CreateReview';
+import { getSpots } from '../../store/spots';
+import { getReviews } from '../../store/reviews';
 
 const SpotDetails = () => {
     const dispatch = useDispatch()
@@ -16,7 +18,13 @@ const SpotDetails = () => {
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
     console.log("THE SPOT IS", spot)
 
+    useEffect(() => {
+        dispatch(getSpots())
+    }, [dispatch])
+
     if (!spot) return null
+
+    
 
 
     const handleDelete = async (e) => {

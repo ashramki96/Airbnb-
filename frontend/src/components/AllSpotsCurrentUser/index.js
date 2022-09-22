@@ -30,9 +30,11 @@ const AllSpotsCurrentUser = () => {
         
 
         {userSpots.map(userSpot => {
-           return (<Link key={userSpot.name} to ={`/spots/${userSpot.id}`}>
-           <li key={userSpot.id}>{userSpot.name}</li>
-           </Link>)
+           return (
+           <Link key={userSpot.name} to ={`/spots/${userSpot.id}`}>
+           <div>{userSpot.name}</div>
+           </Link>
+           )
         })}
 
 

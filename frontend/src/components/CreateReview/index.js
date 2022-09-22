@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { createReview } from '../../store/reviews';
+import { createReview, getReviews } from '../../store/reviews';
 import { Link, Route, useParams } from 'react-router-dom';
+
 
 const CreateReview = () => {
 
@@ -15,6 +16,10 @@ const CreateReview = () => {
     const updateReview = (e) => setReview(e.target.value)
     const updateStars = (e) => setStars(e.target.value)
 
+    // useEffect(() => {
+    //     dispatch(getReviews(spotId))
+    // }, [dispatch, spotId])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -24,7 +29,7 @@ const CreateReview = () => {
         }
 
         const createdReview = await dispatch(createReview(reviewPayload, spotId))
-
+        dispatch(getReviews(spotId))
         console.log("CREATED REVIEW IS ", createdReview)
     }
 
