@@ -20,7 +20,7 @@ const SpotDetails = () => {
 
     useEffect(() => {
         dispatch(getSpots())
-    }, [dispatch])
+    }, [dispatch, spotId])
 
     if (!spot) return null
 
@@ -41,7 +41,7 @@ const SpotDetails = () => {
         <h2>{spot.description}</h2>
         <h3>{spot.address}</h3>
         <h3>Rating: {spot.avgRating}</h3>
-        <div>{spot.previewImage}</div>
+        <div><img src = {spot.previewImage}></img></div>
         <AllReviewsSpot />
         <CreateReview />
         <button onClick = {handleDelete}>Delete Spot</button>

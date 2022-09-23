@@ -25,6 +25,8 @@ const CreateSpotForm = () => {
     const [preview, setPreview] = useState(false)
     const [errors, setErrors] = useState([]);
 
+    const [validationErrors, setValidationErrors] = useState([])
+
     const updateAddress = (e) => setAddress(e.target.value)
     const updateCity = (e) => setCity(e.target.value)
     const updateCountry = (e) => setCountry(e.target.value)
@@ -37,7 +39,15 @@ const CreateSpotForm = () => {
     const updateUrl = (e) => setUrl(e.target.value)
     const updatePreview = (e) => setPreview(!preview)
 
-    
+    useEffect(() => {
+
+      const errors = []
+      if(lat > 90 || lat < -90) errors.push("Please provide a valid latitude")
+      if(lng > 180 || lng < -180) errors.push("Please provide a valid longitude")
+      if(price < 0 ) errors.push("Minimum charge can't be less than $0")
+
+      setValidationErrors(errors)
+    }, [lat, lng, price])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -60,13 +70,8 @@ const CreateSpotForm = () => {
         }
 
 
-        const createdSpot = await dispatch(createSpot(imagePayload, payload)).catch(
-          async (res) => {
-            const data = await res.json();
-            console.log("DATA for Error handling is", data)
-            if(data && data.errors) setErrors(data.errors)
-          }
-        )
+        const createdSpot = await dispatch(createSpot(imagePayload, payload))
+        
         console.log("Payload id is", createdSpot.id)
 
          history.push(`/spots/${createdSpot.id}`)
@@ -76,33 +81,38 @@ const CreateSpotForm = () => {
           <div>
             <h2>Create a Spot</h2>
             <form onSubmit={handleSubmit} className="form">
-              <ul>
-                {errors.map((error, idx) => (
-                  <li key={idx}>{error}</li>
-                ))}
+              <ul className="errors">
+                {validationErrors.length > 0 &&
+                  validationErrors.map((error) =>
+                    <li key={error}>{error}</li>
+                  )}
               </ul>
 
-            <label htmlFor = "address">Address</label>
-            <input
-              id = "address"
-              type="text"
-              value={address}
+              <label htmlFor="address">Address</label>
+              <input
+                required
+                id="address"
+                type="text"
+                value={address}
               onChange={updateAddress} />
 
               <label for = "city">City</label>
             <input
+               required
               type="text"
               value={city}
               onChange={updateCity} />
 
               <label for = "country">Country</label>
               <input
+              required
               type="text"
               value={country}
               onChange={updateCountry} />
 
               <label for = "description">Description</label>
               <input
+              required
               type="text"
               value={description}
               onChange={updateDescription} />
@@ -121,25 +131,29 @@ const CreateSpotForm = () => {
 
               <label for = "name">Name</label>
               <input
+              required
               type="text"
               value={name}
               onChange={updateName} />
 
               <label for = "price">Price</label>
               <input
+              required
               type="text"
               value={price}
               onChange={updatePrice} />
 
               <label for = "state">State</label>
               <input
+              required
               type="text"
               value={state}
               onChange={updateState} />
 
               <label for = "image">Image</label>
               <input
-              type="text"
+              required
+              type="string"
               value={url}
               onChange={updateUrl} />
 

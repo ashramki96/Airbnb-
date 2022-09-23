@@ -86,7 +86,7 @@ const validateQueries = [
   query('maxPrice')
     .optional()
     .isFloat({ min: 0 })
-    .withMessage('Please provide a valid maxPrice value'),
+    .withMessage('Please provide a valid maxPrice value')
 
 ]
 
