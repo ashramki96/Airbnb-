@@ -23,6 +23,7 @@ const CreateSpotForm = () => {
     const [state, setState] = useState("")
     const [url, setUrl] = useState("")
     const [preview, setPreview] = useState(false)
+    const [errors, setErrors] = useState([]);
 
     const updateAddress = (e) => setAddress(e.target.value)
     const updateCity = (e) => setCity(e.target.value)
@@ -59,7 +60,13 @@ const CreateSpotForm = () => {
         }
 
 
-        const createdSpot = await dispatch(createSpot(imagePayload, payload))
+        const createdSpot = await dispatch(createSpot(imagePayload, payload)).catch(
+          async (res) => {
+            const data = await res.json();
+            console.log("DATA for Error handling is", data)
+            if(data && data.errors) setErrors(data.errors)
+          }
+        )
         console.log("Payload id is", createdSpot.id)
 
          history.push(`/spots/${createdSpot.id}`)
@@ -68,7 +75,12 @@ const CreateSpotForm = () => {
         return (
           <div>
             <h2>Create a Spot</h2>
-            <form onSubmit={handleSubmit} className = "form">
+            <form onSubmit={handleSubmit} className="form">
+              <ul>
+                {errors.map((error, idx) => (
+                  <li key={idx}>{error}</li>
+                ))}
+              </ul>
 
             <label htmlFor = "address">Address</label>
             <input
