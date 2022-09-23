@@ -23,7 +23,7 @@ const CreateSpotForm = () => {
     const [state, setState] = useState("")
     const [url, setUrl] = useState("")
     const [preview, setPreview] = useState(false)
-    const [errors, setErrors] = useState([]);
+    
 
     const [validationErrors, setValidationErrors] = useState([])
 
