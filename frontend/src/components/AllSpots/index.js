@@ -24,7 +24,10 @@ const AllSpots = () => {
         
         {spotsArr.map(spot => {
            return (<Link key={spot.name} to ={`/spots/${spot.id}`}>
-           <li key={spot.id}>{spot.name}</li>
+           <div>{spot.name}</div>
+           <div>{spot.address}</div>
+           <div>{spot.rating}</div>
+           <div>${spot.price}</div>
            </Link>)
         })}
         
