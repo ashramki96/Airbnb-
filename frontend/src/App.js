@@ -27,7 +27,6 @@ function App() {
           </Route> */}
           <Route exact path="/">
             <AllSpots />
-            <CreateSpotForm />
           </Route>
           <Route path="/current/spots">
             <AllSpotsCurrentUser />
