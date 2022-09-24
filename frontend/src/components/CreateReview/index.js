@@ -11,7 +11,8 @@ const CreateReview = () => {
     const history = useHistory();
     const { spotId } = useParams()
     const [review, setReview] = useState("")
-    const [stars, setStars] = useState(0)
+    const [stars, setStars] = useState()
+    const [validationErrors, setValidationErrors] = useState([])
 
     const updateReview = (e) => setReview(e.target.value)
     const updateStars = (e) => setStars(e.target.value)
@@ -19,6 +20,15 @@ const CreateReview = () => {
     // useEffect(() => {
     //     dispatch(getReviews(spotId))
     // }, [dispatch, spotId])
+
+    useEffect(() => {
+
+        const errors = []
+        if(stars > 5 || stars < 1) errors.push("Rating must be between 1 and 5")
+        
+  
+        setValidationErrors(errors)
+      }, [stars])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,8 +47,15 @@ const CreateReview = () => {
         <div>
             <h2>Create a Review:</h2>
             <form onSubmit={handleSubmit} className="form">
+            <ul className="errors">
+                {validationErrors.length > 0 &&
+                  validationErrors.map((error) =>
+                    <li key={error}>{error}</li>
+                  )}
+              </ul>
                 <label htmlFor='review'>Review</label>
                 <input
+                    required
                     id="review"
                     type="text"
                     value={review}
@@ -46,6 +63,7 @@ const CreateReview = () => {
 
                 <label htmlFor='stars'>Stars</label>
                 <input
+                    required
                     id="stars"
                     type="number"
                     value={stars}
