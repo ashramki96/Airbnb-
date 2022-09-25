@@ -37,11 +37,12 @@ const SpotDetails = () => {
 
     return (
         <div>
-        <h1>{spot.name}</h1>
+        <h1>{spot.name}</h1> <h4>★ {spot.avgRating}</h4>
+        <div><img src = {spot.previewImage}></img></div>
         <h2>{spot.description}</h2>
         <h3>{spot.address}</h3>
-        <h3>Rating: {spot.avgRating}</h3>
-        <div><img src = {spot.previewImage}></img></div>
+        
+        
         <AllReviewsSpot />
         <CreateReview />
         <button onClick = {handleDelete}>Delete Spot</button>
