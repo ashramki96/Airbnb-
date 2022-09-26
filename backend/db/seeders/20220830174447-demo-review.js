@@ -16,63 +16,87 @@ module.exports = {
           spotId: 1,
           userId: 2,
           review: "great spot",
-          stars: 8
+          stars: 5
 
       },
       {
           spotId: 1,
           userId: 3,
           review: "below my lofty standards",
-          stars: 4
+          stars: 2
       },
-      {
-          spotId: 2,
-          userId: 1,
-          review: "perfect spot",
-          stars: 10
-      },
+      
       {
         spotId: 2,
-        userId: 3,
-        review: "average spot",
-        stars: 5
-    },
-      {
-        spotId: 3,
         userId: 2,
-        review: "the worst spot",
-        stars: 1
-      },
-      {
-        spotId: 3,
-        userId: 1,
-        review: "not great",
-        stars: 3
-      },
-    //   {
-    //     spotId: 4,
-    //     userId: 4,
-    //     review: "average spot",
-    //     stars: 5
-    // },
-    //   {
-    //     spotId: 5,
-    //     userId: 4,
-    //     review: "the worst spot",
-    //     stars: 1
-    //   },
-    //   {
-    //     spotId: 5,
-    //     userId: 4,
-    //     review: "not great",
-    //     stars: 3
-    //   },
-    //   {
-    //     spotId: 6,
-    //     userId: 4,
-    //     review: "not great",
-    //     stars: 3
-    //   }
+        review: "great spot",
+        stars: 5
+
+    },
+    {
+        spotId: 2,
+        userId: 3,
+        review: "below my lofty standards",
+        stars: 2
+    },
+   
+    {
+      spotId: 3,
+      userId: 2,
+      review: "great spot",
+      stars: 5
+
+  },
+  {
+      spotId: 3,
+      userId: 3,
+      review: "below my lofty standards",
+      stars: 2
+  },
+  
+  {
+    spotId: 4,
+    userId: 2,
+    review: "great spot",
+    stars: 5
+
+},
+{
+    spotId: 4,
+    userId: 3,
+    review: "below my lofty standards",
+    stars: 2
+},
+
+{
+  spotId: 5,
+  userId: 2,
+  review: "great spot",
+  stars: 5
+
+},
+{
+  spotId: 5,
+  userId: 3,
+  review: "below my lofty standards",
+  stars: 2
+},
+
+{
+  spotId: 6,
+  userId: 2,
+  review: "great spot",
+  stars: 5
+
+},
+{
+  spotId: 6,
+  userId: 3,
+  review: "below my lofty standards",
+  stars: 2
+},
+
+      
         
   ]);
   },
