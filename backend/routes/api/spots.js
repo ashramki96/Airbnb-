@@ -125,7 +125,7 @@ router.get('/', validateQueries, async (req, res) => {
     const spot = spots[i]
     const averageRating = await spot.getReviews({
       attributes:
-        [[sequelize.fn("AVG", sequelize.col("stars")), "avgStarRating"]], raw: true, nest: true
+        [[sequelize.fn('ROUND', sequelize.fn("AVG", sequelize.col("stars")),1), "avgStarRating"]], raw: true, nest: true
     })
     const imageDetails = await spot.getSpotImages({where: {preview: true}, attributes: ["url"], raw: true, nest: true })
     console.log("image details", imageDetails)
