@@ -29,11 +29,12 @@ const SpotDetails = () => {
     
 
 
-    const handleDelete = async (e) => {
-        e.preventDefault();
-        const deleteCurrentSpot = await dispatch(deleteSpot(spot)).then(() => dispatch(getSpots())).then(history.push(`/`))
-        // history.push(`/`)
+    const handleDelete = () => {
+        const deleteCurrentSpot = dispatch(deleteSpot(spotId)).then(() => dispatch(getSpots()))
+        history.push(`/`)
     }
+
+    
 
    
 

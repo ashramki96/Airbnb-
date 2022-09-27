@@ -14,23 +14,21 @@ const create = spot => ({
     spot
 })
 
-const deleteAction = spot => ({
+const deleteAction = spotId => ({
     type: DELETE,
-    spot
+    spotId
 })
 
-export const deleteSpot = (data) => async dispatch => {
-    console.log("DATA TO BE DELETED IS" , data)
-    const response = await csrfFetch(`/api/spots/${data.id}`, {
+export const deleteSpot = (spotId) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${spotId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         }
     })
     if(response.ok) {
-        const spot = await response.json();
-        dispatch(deleteAction(spot))
-        return spot
+        dispatch(deleteAction(spotId))
+        return response
     }
 }
 
@@ -152,6 +150,14 @@ const spotsReducer = (state = initalState, action) => {
                 }
                 newState[action.spot.id] = action.spot
                 return newState
+
+        case DELETE: 
+                const deletedState = {
+                    ...state
+                }
+                delete deletedState[action.spotId]
+                
+                return deletedState
         default:
             return state
     }

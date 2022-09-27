@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createSpot } from '../../store/spots';
 import './index.css'
+import { getSpots } from '../../store/spots';
 
 
 const CreateSpotForm = ({closeProp}) => {
