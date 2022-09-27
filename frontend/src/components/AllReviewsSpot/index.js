@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Route, useParams } from 'react-router-dom';
 import { getReviews } from '../../store/reviews';
 import { deleteReview } from '../../store/reviews';
+import { getSpots } from '../../store/spots';
 
 const AllReviewsSpot = () => {
     
@@ -12,6 +13,8 @@ const AllReviewsSpot = () => {
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
 
     console.log("REVIEWS, this spot is", spot)
+
+    
 
    useEffect(() => {
     dispatch(getReviews(spotId))
@@ -23,7 +26,7 @@ const AllReviewsSpot = () => {
 
    const handleDelete = async (reviewId) => {
     
-    const deleteThisReview = await dispatch(deleteReview(reviewId))
+    const deleteThisReview = await dispatch(deleteReview(reviewId)).then (() => dispatch(getSpots()))
    }
 
 

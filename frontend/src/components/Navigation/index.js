@@ -20,7 +20,6 @@ function Navigation({ isLoaded }){
       <>
         <LoginFormModal />
         <SignupFormModal />
-        <CreateSpotForm />
       </>
     );
   }
@@ -30,6 +29,8 @@ function Navigation({ isLoaded }){
       <li>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
+    
+<CreateSpotForm />
       </li>
     </ul>
   );

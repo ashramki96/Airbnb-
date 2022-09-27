@@ -18,9 +18,11 @@ const SpotDetails = () => {
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
     console.log("THE SPOT IS", spot)
 
+
     useEffect(() => {
         dispatch(getSpots())
     }, [dispatch, spotId])
+
 
     if (!spot) return null
 
@@ -29,15 +31,15 @@ const SpotDetails = () => {
 
     const handleDelete = async (e) => {
         e.preventDefault();
-        const deleteCurrentSpot = await dispatch(deleteSpot(spot))
-        history.push(`/`)
+        const deleteCurrentSpot = await dispatch(deleteSpot(spot)).then(() => dispatch(getSpots())).then(history.push(`/`))
+        // history.push(`/`)
     }
 
    
 
     return (
         <div>
-        <h1>{spot.name}</h1> <h4>★ {spot.avgRating}</h4>
+        <h1>{spot.name}</h1> <h4>★ {!spot.avgRating ? "0" : spot.avgRating}</h4>
         <div><img src = {spot.previewImage}></img></div>
         <h2>{spot.description}</h2>
         <h3>{spot.address}</h3>

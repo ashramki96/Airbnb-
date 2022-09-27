@@ -1,4 +1,5 @@
 import { csrfFetch } from "./csrf"
+import { getSpots } from "./spots"
 
 const READ = 'reviews/READ'
 const CREATE = 'reviews/CREATE'

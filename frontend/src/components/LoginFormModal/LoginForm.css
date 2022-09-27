@@ -6,3 +6,9 @@
 .labels {
     padding: 30px;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }

@@ -24,6 +24,7 @@ const AllSpots = () => {
         
         {spotsArr.map(spot => {
            return (<Link key={spot.name} to ={`/spots/${spot.id}`}>
+        <div><img src = {spot.previewImage} width="200" height="150"></img></div>
            <div>{spot.name}</div>
            <div>{spot.address}</div>
            <div>{spot.rating}</div>

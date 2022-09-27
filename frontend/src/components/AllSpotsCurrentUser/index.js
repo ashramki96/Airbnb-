@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Route, useParams } from 'react-router-dom';
 import { getSpots } from '../../store/spots';
 import SpotDetails from '../SpotDetails';
+import { deleteSpot } from '../../store/spots';
 
 const AllSpotsCurrentUser = () => {
 
@@ -16,12 +17,14 @@ const AllSpotsCurrentUser = () => {
     console.log(" ALL SPOTS" , spotsArr)
     const userSpots = spotsArr.filter(spot => spot.ownerId === userId )
     console.log("User's spots are ", userSpots)
+   
 
     useEffect(() => {{
         dispatch(getSpots());
     }}, [dispatch])
 
     if(!spots) return null
+
 
     return (
     <div>
@@ -31,9 +34,11 @@ const AllSpotsCurrentUser = () => {
 
         {userSpots.map(userSpot => {
            return (
+            <>
            <Link key={userSpot.name} to ={`/spots/${userSpot.id}`}>
-           <div>{userSpot.name}</div>
+           <div>{userSpot.name}</div> 
            </Link>
+           </>
            )
         })}
 

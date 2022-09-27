@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createReview, getReviews } from '../../store/reviews';
 import { Link, Route, useParams } from 'react-router-dom';
+import { getSpots } from '../../store/spots';
 
 
-const CreateReview = () => {
+const CreateReview = ({closeProp}) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -38,8 +39,10 @@ const CreateReview = () => {
             stars
         }
 
-        const createdReview = await dispatch(createReview(reviewPayload, spotId))
+        const createdReview = await dispatch(createReview(reviewPayload, spotId)).then (() => dispatch(getReviews(spotId))).then (() => dispatch(getSpots()))
         dispatch(getReviews(spotId))
+        closeProp()
+        // .then(() => dispatch(getSpots()))
         console.log("CREATED REVIEW IS ", createdReview)
     }
 
@@ -69,7 +72,7 @@ const CreateReview = () => {
                     value={stars}
                     onChange={updateStars} />
 
-                <button type="submit">Create review</button>
+                <button type="submit" >Create review</button>
 
             </form>
         </div>

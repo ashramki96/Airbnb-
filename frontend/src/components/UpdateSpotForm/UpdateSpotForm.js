@@ -5,7 +5,7 @@ import { updateSpot } from '../../store/spots';
 import { Link, Route, useParams } from 'react-router-dom';
 
 
-const UpdateSpotForm = () => {
+const UpdateSpotForm = ({closeProp}) => {
   const { spotId } = useParams()
   console.log("update is being rendered")
   const spotsArr = useSelector(state => Object.values(state.spots))
@@ -63,6 +63,7 @@ const UpdateSpotForm = () => {
       state
     }
     const updatedSpot = await dispatch(updateSpot(payload))
+    closeProp()
   }
 
   return (

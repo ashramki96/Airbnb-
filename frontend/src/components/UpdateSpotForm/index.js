@@ -5,12 +5,16 @@ import UpdateSpotForm from './UpdateSpotForm'
 function UpdateSpotFormModal() {
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
   return (
     <>
       <button onClick={() => setShowModal(true)}>Update Spot</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UpdateSpotForm />
+          <UpdateSpotForm closeProp = {closeModal}/>
         </Modal>
       )}
     </>
