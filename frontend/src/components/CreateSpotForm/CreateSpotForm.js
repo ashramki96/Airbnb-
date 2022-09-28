@@ -67,7 +67,7 @@ const CreateSpotForm = ({closeProp}) => {
 
         const imagePayload = {
           url,
-          preview
+          preview: true
         }
 
 
@@ -158,8 +158,8 @@ const CreateSpotForm = ({closeProp}) => {
               value={url}
               onChange={updateUrl} />
 
-            <label for = "preview">Check to make this image your preview</label>
-            <input type="checkbox" value = {preview} onChange = {updatePreview}/>
+            {/* <label for = "preview">Check to make this image your preview</label>
+            <input type="checkbox" value = {preview} onChange = {updatePreview}/> */}
               
             
             <button type="submit">Create New Spot</button>

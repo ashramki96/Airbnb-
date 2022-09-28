@@ -13,13 +13,17 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <>
       <ProfileButton user={sessionUser} />
+      <CreateSpotForm />
+      </>
     );
   } else {
     sessionLinks = (
       <>
         <LoginFormModal />
         <SignupFormModal />
+        
       </>
     );
   }
@@ -30,7 +34,7 @@ function Navigation({ isLoaded }){
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
     
-<CreateSpotForm />
+{/* <CreateSpotForm /> */}
       </li>
     </ul>
   );

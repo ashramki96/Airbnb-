@@ -11,6 +11,12 @@ const CreateReview = ({closeProp}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { spotId } = useParams()
+
+
+    const spotsArr = useSelector(state => Object.values(state.spots))
+    const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
+    
+
     const [review, setReview] = useState("")
     const [stars, setStars] = useState()
     const [validationErrors, setValidationErrors] = useState([])

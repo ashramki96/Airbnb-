@@ -11,20 +11,32 @@ import { getReviews } from '../../store/reviews';
 
 const SpotDetails = () => {
     const dispatch = useDispatch()
-    const history = useHistory()
     const { spotId } = useParams();
-    console.log("SPOT ID IS ", spotId)
-    const spotsArr = useSelector(state => Object.values(state.spots))
-    const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
-    console.log("THE SPOT IS", spot)
-
-
+    
+   
+    const history = useHistory()
+    
+    const sessionUser = useSelector(state => state.session.user)
+    let sessionUserId
+    if(sessionUser) {
+         sessionUserId = sessionUser.id;
+    }
+    
     useEffect(() => {
-        dispatch(getSpots())
+        console.log("Did this work")
+        dispatch(getSpots());
+        dispatch(getReviews(spotId));
     }, [dispatch, spotId])
 
-
+    console.log("SPOT ID IS ", spotId)
+    const spotsArr = useSelector(state => Object.values(state.spots))
+    console.log("THIS IS THE ARRAY", spotsArr)
+    const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
     if (!spot) return null
+    const spotOwnerId = spot.ownerId
+    console.log("THE SPOT IS", spot)
+
+   
 
     
 
@@ -45,9 +57,9 @@ const SpotDetails = () => {
         <h2>{spot.description}</h2>
         <h3>{spot.address}</h3>
         
-        
-        <AllReviewsSpot />
-        <CreateReview />
+        <h2>Reviews: </h2>
+        <div>{!spot.avgRating ? "Reviews will appear after you've had a booking" : <AllReviewsSpot />} </div>
+        {sessionUserId && sessionUserId !== spotOwnerId ? <CreateReview /> : null}
         <button onClick = {handleDelete}>Delete Spot</button>
         <UpdateSpotForm />
         </div>
@@ -57,3 +69,5 @@ const SpotDetails = () => {
 
 
 export default SpotDetails
+
+

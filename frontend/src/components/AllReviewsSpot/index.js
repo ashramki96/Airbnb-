@@ -6,7 +6,11 @@ import { deleteReview } from '../../store/reviews';
 import { getSpots } from '../../store/spots';
 
 const AllReviewsSpot = () => {
-    
+    const sessionUser = useSelector(state => state.session.user)
+    let sessionUserId
+    if(sessionUser) {
+         sessionUserId = sessionUser.id;
+    }
     const dispatch = useDispatch()
     const {spotId} = useParams()
     const spotsArr = useSelector(state => Object.values(state.spots))
@@ -29,18 +33,21 @@ const AllReviewsSpot = () => {
     const deleteThisReview = await dispatch(deleteReview(reviewId)).then (() => dispatch(getSpots()))
    }
 
+ 
+
 
     if(!spot) return null
 
     return (
         <div>
-        <h2>Reviews:</h2>
+        {/* <h2>Reviews:</h2> */}
         {reviews.map((review) => {
             return (
                 <>
                 <div>review: {review.review}</div>
                 <div>stars: {review.stars}</div>
-                <button onClick = {() => handleDelete(review.id)}>Delete Review</button>
+                {sessionUserId === review.userId ? <button onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}
+                
                 </>
                 
             )
