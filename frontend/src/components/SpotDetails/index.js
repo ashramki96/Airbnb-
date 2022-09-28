@@ -60,8 +60,8 @@ const SpotDetails = () => {
         <h2>Reviews: </h2>
         <div>{!spot.avgRating ? "Reviews will appear after you've had a booking" : <AllReviewsSpot />} </div>
         {sessionUserId && sessionUserId !== spotOwnerId ? <CreateReview /> : null}
-        <button onClick = {handleDelete}>Delete Spot</button>
-        <UpdateSpotForm />
+        {sessionUserId && sessionUserId === spotOwnerId ? <button onClick = {handleDelete}>Delete Spot</button> : null}
+        {sessionUserId && sessionUserId === spotOwnerId ?<UpdateSpotForm /> : null}
         </div>
     )
 
