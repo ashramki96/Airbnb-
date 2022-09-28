@@ -78,6 +78,7 @@ const UpdateSpotForm = ({closeProp}) => {
               </ul>
         <label htmlFor="address">Address</label>
         <input
+          required
           id="address"
           type="text"
           value={address}
@@ -85,41 +86,49 @@ const UpdateSpotForm = ({closeProp}) => {
         <label for="city">City</label>
 
         <input
+          required
           type="text"
           value={city}
           onChange={updateCity} />
         <label for="country">Country</label>
         <input
+          required
           type="text"
           value={country}
           onChange={updateCountry} />
         <label for="description">Description</label>
         <input
+          required
           type="text"
           value={description}
           onChange={updateDescription} />
         <label for="lat">Lat</label>
         <input
+          required
           type="text"
           value={lat}
           onChange={updateLat} />
         <label for="lng">Lng</label>
         <input
+          required
           type="text"
           value={lng}
           onChange={updateLng} />
         <label for="name">Name</label>
         <input
+          required
           type="text"
           value={name}
           onChange={updateName} />
         <label for="price">Price</label>
         <input
+          required
           type="text"
           value={price}
           onChange={updatePrice} />
         <label for="state">State</label>
         <input
+          required
           type="text"
           value={state}
           onChange={updateState} />
