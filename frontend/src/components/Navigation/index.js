@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Link, Route, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -16,6 +17,7 @@ function Navigation({ isLoaded }){
       <>
       <ProfileButton user={sessionUser} />
       <CreateSpotForm />
+      <Link to = {`/current/spots`}><button>My Spots</button></Link>
       </>
     );
   } else {

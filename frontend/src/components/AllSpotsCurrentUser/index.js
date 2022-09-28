@@ -27,28 +27,22 @@ const AllSpotsCurrentUser = () => {
 
 
     return (
-    <div>
-        <h2>Current user's spots are: </h2>
-
-        
-
-        {userSpots.map(userSpot => {
-           return (
-            <>
-           <Link key={userSpot.name} to ={`/spots/${userSpot.id}`}>
-           <div>{userSpot.name}</div> 
-           </Link>
-           </>
-           )
-        })}
-
-
-        
-        
-        
-    </div>
-    )
-
+        <div>
+            
+            {userSpots.map(spot => {
+               return (<Link key={spot.name} to ={`/spots/${spot.id}`}>
+            <div><img src = {spot.previewImage} width="200" height="150"></img></div>
+               <div>{spot.name}</div>
+               <div>{spot.address}</div>
+               <div>{spot.rating}</div>
+               <div>${spot.price}</div>
+               </Link>)
+            })}
+            
+            
+            
+        </div>
+        )
 }
 
 
