@@ -25,6 +25,13 @@ const AllSpotsCurrentUser = () => {
 
     if(!spots) return null
 
+    if(!userSpots.length){
+        return (
+            <>
+            <h4>You don't have any spots at the moment. You can make one right now by clicking on 'Become a host' </h4>
+            </>
+        )
+    }
 
     return (
         <div>

@@ -15,6 +15,9 @@ const CreateReview = ({closeProp}) => {
 
     const spotsArr = useSelector(state => Object.values(state.spots))
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
+
+    
+    
     
 
     const [review, setReview] = useState("")
@@ -78,7 +81,7 @@ const CreateReview = ({closeProp}) => {
                     value={stars}
                     onChange={updateStars} />
 
-                <button type="submit" >Create review</button>
+               <button type="submit">Create review</button>
 
             </form>
         </div>
