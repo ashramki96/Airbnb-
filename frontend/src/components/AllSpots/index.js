@@ -21,7 +21,8 @@ const AllSpots = () => {
     if(!spots) return null
 
     return (
-    <div className = 'cardContainer'>
+    <div className = 'cardOuterContainer'>
+        <div className='cardInnerContainer'>
         
             {spotsArr.map(spot => {
                 return ( 
@@ -41,7 +42,7 @@ const AllSpots = () => {
                 )
             })}
         
-        
+        </div>
         
     </div>
     )
