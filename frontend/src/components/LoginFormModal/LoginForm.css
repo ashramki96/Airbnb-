@@ -1,14 +1,7 @@
-.login {
-    font-style: italic;
-    padding-left: 10px;
-}
 
-.labels {
-    padding: 30px;
-}
-
-.form {
+.formModal {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
   }

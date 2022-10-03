@@ -1,0 +1,52 @@
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 15px;
+    
+}
+
+.spotCard {
+    padding-top: 20px;
+}
+  .spotImage {
+    width: 300px;
+    height: 280px;
+    border-radius: 12px;
+    object-fit: cover;
+    
+  }
+
+  .spotAddress {
+      font-size: 15px;
+      text-decoration: none;
+      max-width: 290px;
+  }
+
+  .spotDeets {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      width: 300px;
+  }
+
+  .spotName {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      max-width: 280px;
+  }
+
+  .spotRating{
+    display: flex;
+    justify-content: flex-end;
+
+  }
+
+  
+
+  a:link {
+    text-decoration: none;
+  }

@@ -7,6 +7,8 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 import CreateSpotForm from '../CreateSpotForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -22,24 +24,37 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <>
-        <LoginFormModal />
-        <SignupFormModal />
+      <div>
+       {/* <button className='hamburger'>
+            Hamburger
+        </button> */}
+      <ul className = "sessionLinks">
+        <li><LoginFormModal /></li>
+        <li><SignupFormModal /></li>
         
-      </>
+      </ul>
+      </div>
     );
   }
-
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <nav className="navbar">
+      
+        <NavLink exact to="/"><img className = "logo" src = "https://iili.io/LASpOG.png" /></NavLink>
         {isLoaded && sessionLinks}
-    
-{/* <CreateSpotForm /> */}
-      </li>
-    </ul>
+        
+    </nav>
   );
+
+  // return (
+  //   <div className="navbar">
+  //     <div>
+  //       <NavLink exact to="/"><img className = "logo" src = "https://iili.io/LASpOG.png" /></NavLink>
+        
+  //         {isLoaded && sessionLinks}
+        
+  //     </div>
+  //   </div>
+  // );
 }
 
 export default Navigation;

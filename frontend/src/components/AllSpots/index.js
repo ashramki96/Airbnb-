@@ -4,6 +4,7 @@ import { Link, Route, useParams } from 'react-router-dom';
 import { getSpots } from '../../store/spots';
 import SpotDetails from '../SpotDetails';
 import CreateSpotForm from '../CreateSpotForm';
+import './SpotCard.css'
 
 const AllSpots = () => {
 
@@ -20,17 +21,25 @@ const AllSpots = () => {
     if(!spots) return null
 
     return (
-    <div>
+    <div className = 'cardContainer'>
         
-        {spotsArr.map(spot => {
-           return (<Link key={spot.name} to ={`/spots/${spot.id}`}>
-        <div><img src = {spot.previewImage} width="200" height="150"></img></div>
-           <div>{spot.name}</div>
-           <div>{spot.address}</div>
-           <div>{spot.rating}</div>
-           <div>${spot.price}</div>
-           </Link>)
-        })}
+            {spotsArr.map(spot => {
+                return ( 
+                <div className = 'spotCard'>
+                <Link key={spot.name} to={`/spots/${spot.id}`}>
+                    
+                    <div><img className='spotImage' src={spot.previewImage} width="200" height="150"></img></div>
+                    <div className = 'spotDeets'>
+                    <div className = 'spotName'>{spot.name}</div>
+                    <div className = 'spotRating'>★{spot.avgRating}</div>
+                    </div>
+                    <div className='spotAddress'>{spot.city}, {spot.state}</div>
+                    <div classNAme='spotPrice'>${spot.price}</div>
+                    
+                </Link>
+            </div>
+                )
+            })}
         
         
         

@@ -1,5 +1,33 @@
-.links {
-  color: red;
-  padding: 14px 16px;
-  text-decoration: none;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-bottom: black 1px solid
+}
+
+.logo {
+  height: 15%;
+  width: 15%;
+  padding-left: 100px;
+}
+
+.sessionLinks {
+  list-style: none;
+  
+}
+
+.hamburger {
+  
+  cursor: pointer;
+  
+
+}
+
+.line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: black;
 }
