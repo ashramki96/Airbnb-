@@ -1,5 +1,51 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.submitButton {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #e6005c;
+  border-radius: 6px;
+  border-color: #e6005c;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  
+  
+}
+
+
+input {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid grey;
+  font-size: 15px;
+  font-family: 'Nunito Sans';
+  text-align: center;
+  
+}
+
+.errors {
+  text-align: center;
+}

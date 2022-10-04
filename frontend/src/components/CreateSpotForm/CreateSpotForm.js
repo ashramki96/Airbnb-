@@ -80,79 +80,88 @@ const CreateSpotForm = ({closeProp}) => {
 
         return (
           <div>
-            <h2>Create a Spot</h2>
-            <form onSubmit={handleSubmit} className="form">
-              <ul className="errors">
+            <form onSubmit={handleSubmit} className="formContainer">
+              <div className="errors">
                 {validationErrors.length > 0 &&
                   validationErrors.map((error) =>
-                    <li key={error}>{error}</li>
+                  <div>{error}</div>
                   )}
-              </ul>
+              </div>
 
-              <label htmlFor="address">Address</label>
+              
               <input
+              placeholder = "Address"
                 required
                 id="address"
                 type="text"
                 value={address}
               onChange={updateAddress} />
 
-              <label for = "city">City</label>
+             
             <input
+            placeholder = "City"
                required
               type="text"
               value={city}
               onChange={updateCity} />
 
-              <label for = "country">Country</label>
+              
               <input
+              placeholder = "Country"
               required
               type="text"
               value={country}
               onChange={updateCountry} />
 
-              <label for = "description">Description</label>
+              
               <input
+              placeholder = "Description"
               required
               type="text"
               value={description}
               onChange={updateDescription} />
 
-              <label for = "lat">Lat</label>
+              
               <input
+              placeholder = "Latitude"
               type="text"
               value={lat}
               onChange={updateLat} />
 
-              <label for = "lng">Lng</label>
+              
               <input
+              placeholder = "Longitude"
               type="text"
               value={lng}
               onChange={updateLng} />
 
-              <label for = "name">Name</label>
+              
               <input
+              placeholder = "Name"
               required
               type="text"
               value={name}
               onChange={updateName} />
 
-              <label for = "price">Price</label>
+              
               <input
+              placeholder = "Price"
               required
               type="text"
               value={price}
               onChange={updatePrice} />
 
-              <label for = "state">State</label>
+              
               <input
+              placeholder = "State"
               required
               type="text"
               value={state}
               onChange={updateState} />
 
-              <label for = "image">Image</label>
+             
               <input
+              placeholder = "Image url"
               required
               type="string"
               value={url}
@@ -162,7 +171,7 @@ const CreateSpotForm = ({closeProp}) => {
             <input type="checkbox" value = {preview} onChange = {updatePreview}/> */}
               
             
-            <button type="submit">Create New Spot</button>
+            <button className = "submitButton" type="submit">Create New Spot</button>
           </form>
           </div>
 

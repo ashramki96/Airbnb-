@@ -34,65 +34,67 @@ function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className = "form">
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        First Name
+    <form onSubmit={handleSubmit} className = "formContainer">
+      <div className = 'errors'>
+        {errors.map((error, idx) => <div>{error}</div>)}
+        </div>
+      
         <input
+        placeholder = "First Name"
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Last Name
+      
+      
+        
         <input
+        placeholder = "Last Name"
           type="text"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Email
+      
+      
+        
         <input
+        placeholder = "Email"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Username
+      
+      
         <input
+        placeholder = "Username"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Password
+      
+      
         <input
+        placeholder = "Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Confirm Password
+      
+      
         <input
+        placeholder = "Confirm Password"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Sign Up</button>
+      
+      <button className = "signupButton" type="submit">Sign Up</button>
     </form>
   );
 }
