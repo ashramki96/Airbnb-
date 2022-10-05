@@ -34,6 +34,8 @@ function SignupForm() {
   };
 
   return (
+    <>
+    <h2 className = "title">Sign up</h2>
     <form onSubmit={handleSubmit} className = "formContainer">
       <div className = 'errors'>
         {errors.map((error, idx) => <div>{error}</div>)}
@@ -96,6 +98,7 @@ function SignupForm() {
       
       <button className = "signupButton" type="submit">Sign Up</button>
     </form>
+    </>
   );
 }
 

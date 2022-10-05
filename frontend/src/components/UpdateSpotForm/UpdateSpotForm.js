@@ -68,73 +68,82 @@ const UpdateSpotForm = ({closeProp}) => {
 
   return (
     <div>
-      <h2>Update a Spot</h2>
-      <form onSubmit={handleSubmit} className="form">
-      <ul className="errors">
+      <h2 className = "title">Update a Spot</h2>
+      <form onSubmit={handleSubmit} className="formContainer">
+      <div className="errors">
                 {validationErrors.length > 0 &&
                   validationErrors.map((error) =>
-                    <li key={error}>{error}</li>
+                  <div>{error}</div>
                   )}
-              </ul>
-        <label htmlFor="address">Address</label>
+              </div>
+        
         <input
+        placeholder = "Address"
           required
           id="address"
           type="text"
           value={address}
           onChange={updateAddress} />
-        <label for="city">City</label>
+       
 
         <input
+        placeholder = "City"
           required
           type="text"
           value={city}
           onChange={updateCity} />
-        <label for="country">Country</label>
+        
         <input
+        placeholder = "Country"
           required
           type="text"
           value={country}
           onChange={updateCountry} />
-        <label for="description">Description</label>
+        
         <input
+        placeholder = "Description"
           required
           type="text"
           value={description}
           onChange={updateDescription} />
-        <label for="lat">Lat</label>
+        
         <input
+        placeholder = "Latitude"
           required
           type="text"
           value={lat}
           onChange={updateLat} />
-        <label for="lng">Lng</label>
+       
         <input
+        placeholder = "Longitude"
           required
           type="text"
           value={lng}
           onChange={updateLng} />
-        <label for="name">Name</label>
+       
         <input
+        placeholder = "Name"
           required
           type="text"
           value={name}
           onChange={updateName} />
-        <label for="price">Price</label>
+        
         <input
+        placeholder = "Price"
           required
           type="text"
           value={price}
           onChange={updatePrice} />
-        <label for="state">State</label>
+       
         <input
+        placeholder = "State"
           required
           type="text"
           value={state}
           onChange={updateState} />
 
 
-        <button type="submit">Update Spot</button>
+        <button className = 'submitButton' type="submit">Update Spot</button>
       </form>
     </div>
 

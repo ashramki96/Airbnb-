@@ -79,6 +79,7 @@ const CreateSpotForm = ({closeProp}) => {
       }
 
         return (
+          <><h2 className = "title">Create a spot</h2>
           <div>
             <form onSubmit={handleSubmit} className="formContainer">
               <div className="errors">
@@ -174,7 +175,7 @@ const CreateSpotForm = ({closeProp}) => {
             <button className = "submitButton" type="submit">Create New Spot</button>
           </form>
           </div>
-
+          </>
         )
     
 }

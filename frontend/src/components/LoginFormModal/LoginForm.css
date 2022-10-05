@@ -60,3 +60,10 @@ input {
 .errors {
     text-align: center;
 }
+
+.title {
+    font-family: 'Nunito Sans';
+    text-align: center;
+    border-bottom: #D3D3D3 1px solid;
+    padding-bottom: 10px;
+  }

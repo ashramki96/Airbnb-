@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 400px;
+  width: 500px;
   
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -34,10 +34,10 @@ input {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 6px;
   border: 1px solid grey;
   font-size: 15px;
