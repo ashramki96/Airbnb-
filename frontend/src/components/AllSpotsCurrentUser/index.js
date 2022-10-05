@@ -34,20 +34,30 @@ const AllSpotsCurrentUser = () => {
     }
 
     return (
-        <div>
+        <div className = 'cardOuterContainer'>
+        <div className='cardInnerContainer'>
             
             {userSpots.map(spot => {
-               return (<Link key={spot.name} to ={`/spots/${spot.id}`}>
-            <div><img src = {spot.previewImage} width="200" height="150"></img></div>
-               <div>{spot.name}</div>
-               <div>{spot.address}</div>
-               <div>{spot.rating}</div>
-               <div>${spot.price}</div>
-               </Link>)
+               return (
+               <div className = 'spotCard'>
+                <Link key={spot.name} to={`/spots/${spot.id}`}>
+                    
+                    <div><img className='spotImage' src={spot.previewImage} width="200" height="150"></img></div>
+                    <div className = 'spotDeets'>
+                    <div className = 'spotName'>{spot.name}</div>
+                    <div className = 'spotRating'>★<i className="fa-solid fa-star fa-xs"></i>{spot.avgRating}</div>
+                    </div>
+                    <div className='spotAddress'>{spot.city}, {spot.state}</div>
+                    <div classNAme='spotPrice'>${spot.price}</div>
+                    
+                </Link>
+            </div>
+               )
             })}
             
             
             
+        </div>
         </div>
         )
 }
