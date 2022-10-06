@@ -48,6 +48,57 @@ module.exports = {
         preview: true
       },
 
+      {
+        spotId: 7,
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-51982246/original/065c5115-5165-4d84-b6d2-962a006a0917.jpeg?im_w=1440',
+        preview: true
+      },
+      {
+        spotId: 8,
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-720123300938484648/original/c133a626-a1c6-4eee-b10a-b272b9a90bba.jpeg?im_w=1200',
+        preview: true
+      },
+      {
+        spotId: 9,
+        url: 'https://a0.muscache.com/im/pictures/7b54eb15-a089-4885-ba20-92096aec89db.jpg?im_w=720',
+        preview: true
+      },
+      {
+        spotId: 10,
+        url: 'https://a0.muscache.com/im/pictures/5f9a0121-499d-4da0-810f-27409ff07db8.jpg?im_w=720',
+        preview: true
+      },
+      {
+        spotId: 11,
+        url: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-570413613868837211/original/55749629-83c1-4541-8062-91f00b92a207.jpeg?im_w=1200',
+        preview: true
+      },
+      {
+        spotId: 12,
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-713917162858023105/original/81f0c550-7e2c-4107-b48d-40d94617d66f.jpeg?im_w=720',
+        preview: true
+      },
+      {
+        spotId: 13,
+        url: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-46799020/original/944bc145-43bc-46ec-b141-f066abfeb2db.jpeg?im_w=1440',
+        preview: true
+      },
+      {
+        spotId: 14,
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-615752144938959999/original/84ed322e-2c30-4b8e-860a-11baf9fe9f45.jpeg?im_w=1200',
+        preview: true
+      },
+      {
+        spotId: 15,
+        url: 'https://a0.muscache.com/im/pictures/b9ba1cf5-6070-48eb-95e3-1e98c4d3b109.jpg?im_w=1200',
+        preview: true
+      },
+      {
+        spotId: 16,
+        url: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-20536744/original/068965dd-9f59-40ee-8754-9798114bf6eb.jpeg?im_w=1200',
+        preview: true
+      },
+
     ]);
   },
 

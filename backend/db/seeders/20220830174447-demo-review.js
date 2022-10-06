@@ -96,6 +96,130 @@ module.exports = {
   stars: 2
 },
 
+{
+  spotId: 7,
+  userId: 3,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 7,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 8,
+  userId: 3,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 8,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 9,
+  userId: 3,
+  review: "below my lofty standards",
+  stars: 2
+},
+  {
+    spotId: 9,
+    userId: 3,
+    review: "below my lofty standards",
+    stars: 2
+  },
+  {
+    spotId: 10,
+    userId: 1,
+    review: "very nice",
+    stars: 4
+  },
+
+{
+  spotId: 10,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 11,
+  userId: 3,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 11,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 12,
+  userId: 2,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 12,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 13,
+  userId: 2,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 13,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 14,
+  userId: 2,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 14,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 15,
+  userId: 2,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 15,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+{
+  spotId: 16,
+  userId: 2,
+  review: "below my lofty standards",
+  stars: 2
+},
+{
+  spotId: 16,
+  userId: 1,
+  review: "very nice",
+  stars: 4
+},
+
+
+
       
         
   ]);
