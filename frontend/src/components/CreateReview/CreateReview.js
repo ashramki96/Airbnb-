@@ -57,31 +57,32 @@ const CreateReview = ({closeProp}) => {
 
     return (
         <div>
-            <h2>Create a Review:</h2>
-            <form onSubmit={handleSubmit} className="form">
-            <ul className="errors">
+            <h2 className = 'title'>Create a Review</h2>
+            <form onSubmit={handleSubmit} className="formContainer">
+            <div className="errors">
                 {validationErrors.length > 0 &&
                   validationErrors.map((error) =>
-                    <li key={error}>{error}</li>
+                    <div>{error}</div>
                   )}
-              </ul>
-                <label htmlFor='review'>Review</label>
+              </div>
+                
                 <input
-                    required
+                    placeholder = 'Review'
                     id="review"
                     type="text"
                     value={review}
                     onChange={updateReview} />
 
-                <label htmlFor='stars'>Stars</label>
+                
                 <input
+                    placeholder = 'Rating on a scale of 1 - 5'
                     required
                     id="stars"
                     type="number"
                     value={stars}
                     onChange={updateStars} />
 
-               <button type="submit">Create review</button>
+               <button className = "submitButton" type="submit">Create review</button>
 
             </form>
         </div>

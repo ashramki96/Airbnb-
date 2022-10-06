@@ -28,13 +28,15 @@ const SpotDetails = () => {
         //  currentUserReviewsArr.push(currentUserReviews)
     }
 
-    const reviewsArr = useSelector(state => Object.values(state.reviews))
-    const userReview = reviewsArr.find(singleReview => singleReview.userId === sessionUserId)
+    const allReviewsArr = useSelector(state => Object.values(state.reviews))
+    const reviewsArr = allReviewsArr.filter(review => review.spotId === +spotId)
+    const userReview = reviewsArr.filter(singleReview => singleReview.userId === sessionUserId)
 
     useEffect(() => {
         console.log("Did this work")
         dispatch(getSpots());
         dispatch(getReviews(spotId));
+
     }, [dispatch, spotId])
 
     console.log("SPOT ID IS ", spotId)
@@ -56,7 +58,7 @@ const SpotDetails = () => {
     }
 
 
-
+    // !userReview && 
 
 
     return (
@@ -67,8 +69,8 @@ const SpotDetails = () => {
             <h3>{spot.address}</h3>
 
             <h2>Reviews: </h2>
-            <div>{!spot.avgRating ? "Reviews will appear after you've had a booking" : <AllReviewsSpot />} </div>
-            {!userReview && sessionUserId && sessionUserId !== spotOwnerId ? <CreateReview /> : null}
+            <div>{!spot.avgRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
+            {sessionUserId && userReview.length === 0 && sessionUserId !== spotOwnerId ? <CreateReview />: null}
             {sessionUserId && sessionUserId === spotOwnerId ? <button onClick={handleDelete}>Delete Spot</button> : null}
             {sessionUserId && sessionUserId === spotOwnerId ? <UpdateSpotForm /> : null}
         </div>
