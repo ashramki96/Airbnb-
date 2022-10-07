@@ -6,11 +6,11 @@
 .cardInnerContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding-top: 30px;
+    padding-top: 20px;
     grid-gap: 35px;
     
-
 }
+
 
 .spotCard {
     padding-top: 20px;

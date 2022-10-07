@@ -8,3 +8,18 @@ li, a, button, div {
 }
 
 
+.mySpots {
+    text-align: center;
+    border-bottom: #D3D3D3 1px solid;
+    margin-top: 0;
+}
+
+.balloonPic {
+    height: 100%;
+    width: 100%;
+    border-radius: 1%;
+}
+
+.noSpots {
+    text-align: center;
+}

@@ -28,12 +28,15 @@ const AllSpotsCurrentUser = () => {
     if(!userSpots.length){
         return (
             <>
-            <h4>You don't have any spots at the moment. You can make one right now by clicking on 'Become a host' </h4>
+            <h3 className = "noSpots">You don't have any spots at the moment. Start your journey with us by clicking on 'Become a host'</h3>
+            <img className = "balloonPic" src = "https://media.cntraveler.com/photos/605961ae7b588da524cfef44/master/w_2580%2Cc_limit/Cappadocia-GettyImages-166186583.jpg"></img>
             </>
         )
     }
 
     return (
+        <>
+        <h1 className = "mySpots">My Spots</h1>
         <div className = 'cardOuterContainer'>
         <div className='cardInnerContainer'>
             
@@ -59,6 +62,7 @@ const AllSpotsCurrentUser = () => {
             
         </div>
         </div>
+        </>
         )
 }
 
