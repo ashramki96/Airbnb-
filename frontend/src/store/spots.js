@@ -1,12 +1,18 @@
 import { csrfFetch } from "./csrf"
 
 const READ = 'spots/READ'
+const READ_ONE = 'spots/READ_ONE'
 const CREATE = 'spots/CREATE'
 const DELETE = 'spots/DELETE'
 
 const read = spots => ({
     type: READ,
     spots
+})
+
+const readOne = spot => ({
+    type: READ_ONE,
+    spot
 })
 
 const create = spot => ({
@@ -43,6 +49,19 @@ export const deleteSpot = (spotId) => async dispatch => {
 //         body: JSON.stringify(data)
 //     })
 // }
+
+export const getOneSpot = (spotId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/spots/${spotId}`)
+    
+    if(response.ok) {
+        const spot = await response.json();
+        console.log("THE SPOT ISS", spot)
+        dispatch(readOne(spot))
+        return response
+
+    }
+    
+}
 
 
 export const createSpot = (imagePayload, payload) => async dispatch => {
@@ -134,15 +153,12 @@ const spotsReducer = (state = initalState, action) => {
                 ...state,
                 ...allSpots,
             }
-        // case READ_ONE:
-        //     // const newState = {...state, 
-        //     //     [action.spot.id]: action.spot
-        //     // }
-        //     // return {
-        //     //     ...newState
-        //     // }
+
+        case READ_ONE:
+            const updatedState = {...state}
+            updatedState[action.spot.id] = action.spot
+            return updatedState
         
-        //     const newState = [action.spot]
         case CREATE: 
             
                 const newState = {

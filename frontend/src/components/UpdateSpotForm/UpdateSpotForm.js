@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { updateSpot } from '../../store/spots';
 import { Link, Route, useParams } from 'react-router-dom';
-import { getSpots } from '../../store/spots';
+import { getSpots, getOneSpot } from '../../store/spots';
 
 
 const UpdateSpotForm = ({closeProp}) => {
@@ -38,6 +38,17 @@ const UpdateSpotForm = ({closeProp}) => {
   const updateState = (e) => setState(e.target.value)
 
 
+  // useEffect(() => {
+
+  //   const errors = []
+  //   if(lat > 90 || lat < -90) errors.push("Please provide a valid latitude")
+  //   if(lng > 180 || lng < -180) errors.push("Please provide a valid longitude")
+  //   if(price < 0 ) errors.push("Minimum charge can't be less than $0")
+
+  //   setValidationErrors(errors)
+  //   dispatch(getSpots())
+  // }, [lat, lng, price])
+
   useEffect(() => {
 
     const errors = []
@@ -46,7 +57,7 @@ const UpdateSpotForm = ({closeProp}) => {
     if(price < 0 ) errors.push("Minimum charge can't be less than $0")
 
     setValidationErrors(errors)
-    dispatch(getSpots())
+    dispatch(getOneSpot(spotId))
   }, [lat, lng, price])
 
   const handleSubmit = async (e) => {
@@ -65,7 +76,8 @@ const UpdateSpotForm = ({closeProp}) => {
       state
     }
     const updatedSpot = await dispatch(updateSpot(payload))
-    dispatch(getSpots())
+    // dispatch(getSpots())
+    dispatch(getOneSpot(spotId))
     closeProp()
   }
 

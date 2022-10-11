@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Route, useParams } from 'react-router-dom';
 import { getReviews } from '../../store/reviews';
 import { deleteReview } from '../../store/reviews';
-import { getSpots } from '../../store/spots';
+import { getSpots, getOneSpot } from '../../store/spots';
 
 const AllReviewsSpot = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -30,7 +30,9 @@ const AllReviewsSpot = () => {
 
    const handleDelete = async (reviewId) => {
     
-    const deleteThisReview = await dispatch(deleteReview(reviewId)).then (() => dispatch(getSpots()))
+    // const deleteThisReview = await dispatch(deleteReview(reviewId)).then (() => dispatch(getSpots()))
+
+    const deleteThisReview = await dispatch(deleteReview(reviewId)).then (() => dispatch(getOneSpot(spotId)))
    }
 
  

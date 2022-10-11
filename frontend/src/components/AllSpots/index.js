@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
-import { getSpots } from '../../store/spots';
+import { getSpots, getOneSpot } from '../../store/spots';
 import { getReviews } from '../../store/reviews';
 import SpotDetails from '../SpotDetails';
 import CreateSpotForm from '../CreateSpotForm';

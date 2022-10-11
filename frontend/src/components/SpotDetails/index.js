@@ -6,7 +6,7 @@ import { deleteSpot } from '../../store/spots';
 import { useHistory } from 'react-router-dom';
 import AllReviewsSpot from '../AllReviewsSpot';
 import CreateReview from '../CreateReview';
-import { getSpots } from '../../store/spots';
+import { getSpots, getOneSpot } from '../../store/spots';
 import { getReviews } from '../../store/reviews';
 
 const SpotDetails = () => {
@@ -32,18 +32,26 @@ const SpotDetails = () => {
     const reviewsArr = allReviewsArr.filter(review => review.spotId === +spotId)
     const userReview = reviewsArr.filter(singleReview => singleReview.userId === sessionUserId)
 
+    // useEffect(() => {
+    //     console.log("Did this work")
+    //     dispatch(getSpots());
+    //     dispatch(getReviews(spotId));
+
+    // }, [dispatch, spotId])
+
     useEffect(() => {
         console.log("Did this work")
-        dispatch(getSpots());
+        dispatch(getOneSpot(spotId));
         dispatch(getReviews(spotId));
+    }, [spotId])
 
-    }, [dispatch, spotId])
-
+    
     console.log("SPOT ID IS ", spotId)
     const spotsArr = useSelector(state => Object.values(state.spots))
     console.log("THIS IS THE ARRAY", spotsArr)
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
     if (!spot) return null
+    if(!spot.SpotImages) return null
     const spotOwnerId = spot.ownerId
     console.log("THE SPOT IS", spot)
 
@@ -66,10 +74,10 @@ const SpotDetails = () => {
             <h1>{spot.name}</h1> {sessionUserId && sessionUserId === spotOwnerId ? 
             <button onClick={handleDelete}>Delete Spot</button> : null}
             {sessionUserId && sessionUserId === spotOwnerId ? <UpdateSpotForm /> : null}
-             <h4>★ {!spot.avgRating ? "0" : spot.avgRating} • {reviewsArr.length} reviews • {spot.address}</h4>
-            <div><img className = "spotImg" src={spot.previewImage}></img></div>
+             <h4>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} • {reviewsArr.length} reviews • {spot.address}</h4>
+            <div><img className = "spotImg" src={spot.SpotImages[0].url}></img></div>
             <div className = "aircoverGrid">
-            <div className = "hostedBy">Entire spot hosted by Michael Myers</div>
+            <div className = "hostedBy">Entire spot hosted by {spot.Owner.firstName} {spot.Owner.lastName} </div>
             <div className = "spotStats">4 guests · 3 bedrooms · 1 bed · 1 bath</div>
             <img className = "aircover" src = "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
             <div className = "aircoverText">Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</div>
@@ -78,8 +86,8 @@ const SpotDetails = () => {
             
            
 
-            <h2>★ {!spot.avgRating ? "0" : spot.avgRating} • {reviewsArr.length} Reviews: </h2>
-            <div>{!spot.avgRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
+            <h2>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} • {reviewsArr.length} Reviews: </h2>
+            <div>{!spot.avgStarRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
             {sessionUserId && userReview.length === 0 && sessionUserId !== spotOwnerId ? <CreateReview />: null}
         </div>
     )

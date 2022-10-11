@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createReview, getReviews } from '../../store/reviews';
 import { Link, Route, useParams } from 'react-router-dom';
-import { getSpots } from '../../store/spots';
+import { getSpots, getOneSpot } from '../../store/spots';
 
 
 const CreateReview = ({closeProp}) => {
@@ -48,7 +48,7 @@ const CreateReview = ({closeProp}) => {
             stars
         }
 
-        const createdReview = await dispatch(createReview(reviewPayload, spotId)).then (() => dispatch(getReviews(spotId))).then (() => dispatch(getSpots()))
+        const createdReview = await dispatch(createReview(reviewPayload, spotId)).then (() => dispatch(getReviews(spotId))).then (() => dispatch(getOneSpot(spotId)))
         dispatch(getReviews(spotId))
         closeProp()
         // .then(() => dispatch(getSpots()))
