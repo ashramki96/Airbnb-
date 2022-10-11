@@ -33,7 +33,7 @@ const AllSpots = () => {
                     <div><img className='spotImage' src={spot.previewImage} width="200" height="150"></img></div>
                     <div className = 'spotDeets'>
                     <div className = 'spotName'>{spot.name}</div>
-                    <div className = 'spotRating'>★<i className="fa-solid fa-star fa-xs"></i>{spot.avgRating}</div>
+                    <div className = 'spotRating'>★{spot.avgRating}</div>
                     </div>
                     <div className='spotAddress'>{spot.city}, {spot.state}</div>
                     <div className='spotPrice'>${spot.price}</div>

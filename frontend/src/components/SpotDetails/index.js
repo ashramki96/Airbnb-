@@ -62,17 +62,25 @@ const SpotDetails = () => {
 
 
     return (
-        <div>
-            <h1>{spot.name}</h1> <h4>★ {!spot.avgRating ? "0" : spot.avgRating}</h4>
-            <div><img src={spot.previewImage}></img></div>
-            <h2>{spot.description}</h2>
-            <h3>{spot.address}</h3>
+        <div className = "spotDetails">
+            <h1>{spot.name}</h1> {sessionUserId && sessionUserId === spotOwnerId ? 
+            <button onClick={handleDelete}>Delete Spot</button> : null}
+            {sessionUserId && sessionUserId === spotOwnerId ? <UpdateSpotForm /> : null}
+             <h4>★ {!spot.avgRating ? "0" : spot.avgRating} • {reviewsArr.length} reviews • {spot.address}</h4>
+            <div><img className = "spotImg" src={spot.previewImage}></img></div>
+            <div className = "aircoverGrid">
+            <div className = "hostedBy">Entire spot hosted by Michael Myers</div>
+            <div className = "spotStats">4 guests · 3 bedrooms · 1 bed · 1 bath</div>
+            <img className = "aircover" src = "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
+            <div className = "aircoverText">Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</div>
+            </div>
+            <h4 className = "spotDescription">{spot.description}</h4>
+            
+           
 
-            <h2>Reviews: </h2>
+            <h2>★ {!spot.avgRating ? "0" : spot.avgRating} • {reviewsArr.length} Reviews: </h2>
             <div>{!spot.avgRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
             {sessionUserId && userReview.length === 0 && sessionUserId !== spotOwnerId ? <CreateReview />: null}
-            {sessionUserId && sessionUserId === spotOwnerId ? <button onClick={handleDelete}>Delete Spot</button> : null}
-            {sessionUserId && sessionUserId === spotOwnerId ? <UpdateSpotForm /> : null}
         </div>
     )
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { updateSpot } from '../../store/spots';
 import { Link, Route, useParams } from 'react-router-dom';
+import { getSpots } from '../../store/spots';
 
 
 const UpdateSpotForm = ({closeProp}) => {
@@ -15,15 +16,15 @@ const UpdateSpotForm = ({closeProp}) => {
 
   const dispatch = useDispatch();
 
-  const [address, setAddress] = useState("")
-  const [city, setCity] = useState("")
-  const [country, setCountry] = useState("")
-  const [description, setDescription] = useState("")
-  const [lat, setLat] = useState("")
-  const [lng, setLng] = useState("")
-  const [name, setName] = useState("")
-  const [price, setPrice] = useState("")
-  const [state, setState] = useState("")
+  const [address, setAddress] = useState(currentSpot.address)
+  const [city, setCity] = useState(currentSpot.city)
+  const [country, setCountry] = useState(currentSpot.country)
+  const [description, setDescription] = useState(currentSpot.description)
+  const [lat, setLat] = useState(currentSpot.lat)
+  const [lng, setLng] = useState(currentSpot.lng)
+  const [name, setName] = useState(currentSpot.name)
+  const [price, setPrice] = useState(currentSpot.price)
+  const [state, setState] = useState(currentSpot.state)
   const [validationErrors, setValidationErrors] = useState([])
 
   const updateAddress = (e) => setAddress(e.target.value)
@@ -45,6 +46,7 @@ const UpdateSpotForm = ({closeProp}) => {
     if(price < 0 ) errors.push("Minimum charge can't be less than $0")
 
     setValidationErrors(errors)
+    dispatch(getSpots())
   }, [lat, lng, price])
 
   const handleSubmit = async (e) => {
@@ -63,6 +65,7 @@ const UpdateSpotForm = ({closeProp}) => {
       state
     }
     const updatedSpot = await dispatch(updateSpot(payload))
+    dispatch(getSpots())
     closeProp()
   }
 

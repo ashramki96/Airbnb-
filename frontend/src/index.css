@@ -4,7 +4,13 @@
 
 
 li, a, button, div {
-    font-family: "Nunito Sans"
+    font-family: "Nunito Sans";
+    
+}
+
+a:visited {
+    text-decoration: none;
+    color: black
 }
 
 
@@ -22,4 +28,61 @@ li, a, button, div {
 
 .noSpots {
     text-align: center;
+}
+
+.spotImg {
+    height: 500px;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.spotDetails {
+    display: block;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.hostedBy {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.spotStats {
+    padding-bottom: 10px;
+    border-bottom: #D3D3D3 1px solid;
+}
+
+.aircover {
+    height: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.aircoverText {
+    padding-bottom: 25px;
+    border-bottom: #D3D3D3 1px solid;
+}
+
+/* .aircoverGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 600px;
+} */
+
+.reviewer {
+    font-weight: bold;
+}
+
+.reviewsOuterContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    gap: 40px;
+}
+
+.spotDescription {
+    border-bottom: #D3D3D3 1px solid;
+    padding-bottom: 25px;
 }

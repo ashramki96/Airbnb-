@@ -39,16 +39,17 @@ const AllReviewsSpot = () => {
     if(!spot) return null
 
     return (
-        <div>
+        <div className = "reviewsOuterContainer">
         {/* <h2>Reviews:</h2> */}
         {reviews.map((review) => {
             return (
-                <>
-                <div>review: {review.review}</div>
-                <div>stars: {review.stars}</div>
+                <div >
+                <div className = "reviewer">{review.User.firstName}</div>
+                <div>{review.review}</div>
+                <div>★{review.stars}</div>
                 {sessionUserId === review.userId ? <button onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}
                 
-                </>
+                </div>
                 
             )
         })}
