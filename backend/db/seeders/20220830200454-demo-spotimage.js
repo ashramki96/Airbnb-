@@ -65,7 +65,7 @@ module.exports = {
       },
       {
         spotId: 10,
-        url: 'https://a0.muscache.com/im/pictures/5f9a0121-499d-4da0-810f-27409ff07db8.jpg?im_w=720',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/The_Bennati_House%2C_Lake_Arrowhead%2C_California.jpg/1920px-The_Bennati_House%2C_Lake_Arrowhead%2C_California.jpg',
         preview: true
       },
       {

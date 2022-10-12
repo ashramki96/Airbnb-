@@ -81,7 +81,7 @@ module.exports = {
         country: "USA",
         lat: 14.24324,
         lng: 14.34434,
-        name: "Private chalet",
+        name: "A-frame in the Woods",
         description: "Get away from the hustle and bustle to kick back under tall trees and a blue southern sky at Windsong Chalet, our secluded hideaway on five wooded acres on Lookout Mountain. ",
         price: 450
     },
