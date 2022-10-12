@@ -15,7 +15,7 @@ module.exports = {
       {
           spotId: 1,
           userId: 2,
-          review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. The horses came up to say hello to us every day, we played frisbee in the front yard, and it was very fun to explore the property. If you are looking for a beautiful, peaceful cabin getaway from the loud city, this is the place! The surrounding town is beautiful too! Lots of walking trails and new places to explore.",
+          review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking.",
           stars: 5
 
       },
@@ -29,7 +29,7 @@ module.exports = {
       {
         spotId: 2,
         userId: 2,
-        review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. The horses came up to say hello to us every day, we played frisbee in the front yard, and it was very fun to explore the property. If you are looking for a beautiful, peaceful cabin getaway from the loud city, this is the place! The surrounding town is beautiful too! Lots of walking trails and new places to explore.",
+        review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. ",
         stars: 5
 
     },
@@ -43,7 +43,7 @@ module.exports = {
     {
       spotId: 3,
       userId: 2,
-      review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. The horses came up to say hello to us every day, we played frisbee in the front yard, and it was very fun to explore the property. If you are looking for a beautiful, peaceful cabin getaway from the loud city, this is the place! The surrounding town is beautiful too! Lots of walking trails and new places to explore.",
+      review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. ",
       stars: 5
 
   },
@@ -57,7 +57,7 @@ module.exports = {
   {
     spotId: 4,
     userId: 2,
-    review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. The horses came up to say hello to us every day, we played frisbee in the front yard, and it was very fun to explore the property. If you are looking for a beautiful, peaceful cabin getaway from the loud city, this is the place! The surrounding town is beautiful too! Lots of walking trails and new places to explore.",
+    review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. ",
     stars: 5
 
 },
@@ -71,7 +71,7 @@ module.exports = {
 {
   spotId: 5,
   userId: 2,
-  review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. The horses came up to say hello to us every day, we played frisbee in the front yard, and it was very fun to explore the property. If you are looking for a beautiful, peaceful cabin getaway from the loud city, this is the place! The surrounding town is beautiful too! Lots of walking trails and new places to explore.",
+  review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. ",
   stars: 5
 
 },
@@ -85,7 +85,7 @@ module.exports = {
 {
   spotId: 6,
   userId: 2,
-  review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. The horses came up to say hello to us every day, we played frisbee in the front yard, and it was very fun to explore the property. If you are looking for a beautiful, peaceful cabin getaway from the loud city, this is the place! The surrounding town is beautiful too! Lots of walking trails and new places to explore.",
+  review: "I wish I could give this place 6 stars. The cabin was amazing!! The view from the porch every morning with coffee was the best, there were many local shops near by to explore, and the grounds were breath taking. ",
   stars: 5
 
 },
@@ -105,7 +105,7 @@ module.exports = {
 {
   spotId: 7,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. ",
   stars: 4
 },
 {
@@ -117,7 +117,7 @@ module.exports = {
 {
   spotId: 8,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. ",
   stars: 4
 },
 {
@@ -130,7 +130,7 @@ module.exports = {
   {
     spotId: 9,
     userId: 1,
-    review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+    review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. ",
     stars: 2
   },
   {
@@ -143,7 +143,7 @@ module.exports = {
 {
   spotId: 10,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 {
@@ -155,7 +155,7 @@ module.exports = {
 {
   spotId: 11,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 {
@@ -167,7 +167,7 @@ module.exports = {
 {
   spotId: 12,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 {
@@ -179,7 +179,7 @@ module.exports = {
 {
   spotId: 13,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 {
@@ -191,7 +191,7 @@ module.exports = {
 {
   spotId: 14,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 {
@@ -203,7 +203,7 @@ module.exports = {
 {
   spotId: 15,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 {
@@ -215,7 +215,7 @@ module.exports = {
 {
   spotId: 16,
   userId: 1,
-  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location. Tons of birds and squirrels frequent the front porch and 5 horses are usually within sight to greet you.",
+  review: "Great location, privacy and spot on description. The owner was accommodating and check in was simple. We were able to enjoy time on the front porch and build a fire our back at night. Really a private, quiet location.  ",
   stars: 4
 },
 

@@ -212,7 +212,7 @@ module.exports = {
         lat: 14.25643223454676,
         lng: 14.37744352436764,
         name: "Quiet Lakefront Cottage",
-        description: "If you're searching for an incredible retreat filled with endless recreational options, look no further than this spectacular Innsbrook vacation rental. This 3-bedroom, 2-bath cottage offers something for every age and every stage from hiking to catching butterflies. ",
+        description: "If you're searching for an incredible retreat filled with endless recreational options, look no further than this spectacular Innsbrook vacation rental. ",
         price: 450
     },
 
