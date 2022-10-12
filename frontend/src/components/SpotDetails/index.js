@@ -74,7 +74,7 @@ const SpotDetails = () => {
             <h1>{spot.name}</h1> {sessionUserId && sessionUserId === spotOwnerId ? 
             <button className = 'deleteSpotButton' onClick={handleDelete}>Delete Spot</button> : null}
             {sessionUserId && sessionUserId === spotOwnerId ? <UpdateSpotForm /> : null}
-             <h4>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} • {reviewsArr.length} reviews • {spot.address}</h4>
+             <h4><i class="fa-sharp fa-solid fa-star fa-xs"></i> {!spot.avgStarRating ? "0" : spot.avgStarRating} • {reviewsArr.length} reviews • {spot.address}</h4>
             <div><img className = "spotImg" src={spot.SpotImages[0].url}></img></div>
             <div className = "aircoverGrid">
             <div className = "hostedBy">Entire spot hosted by {spot.Owner.firstName} {spot.Owner.lastName} </div>
@@ -86,7 +86,7 @@ const SpotDetails = () => {
             
            
 
-            <h2>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} · {reviewsArr.length} Reviews  </h2>
+            <h2><i class="fa-sharp fa-solid fa-star fa-xs"></i> {!spot.avgStarRating ? "0" : spot.avgStarRating} · {reviewsArr.length} Reviews  </h2>
             {sessionUserId && userReview.length === 0 && sessionUserId !== spotOwnerId ? <CreateReview />: null}
             <div>{!spot.avgStarRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
            

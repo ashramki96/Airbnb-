@@ -46,7 +46,7 @@ const AllReviewsSpot = () => {
         {reviews.map((review) => {
             return (
                 <div className = "reviewInnerContainer">
-                <div className = "reviewer">{review.User.firstName} ★ {review.stars} {sessionUserId === review.userId ? <button className = 'deleteReviewButton' onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}</div>
+                <div className = "reviewer">{review.User.firstName} <i class="fa-sharp fa-solid fa-star fa-xs"></i> {review.stars} {sessionUserId === review.userId ? <button className = 'deleteReviewButton' onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}</div>
                 <div className = 'review'>{review.review}</div> 
                 
                 

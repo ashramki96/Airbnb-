@@ -142,3 +142,15 @@ a:visited {
     padding-bottom: 10px;
     border: none;
 }
+
+.avgRating {
+    font-weight: bold;
+}
+
+.spotPrice{
+    font-weight: bold;
+}
+
+.star {
+    padding-right: 3px;
+}

@@ -37,10 +37,11 @@ const CreateReview = ({closeProp}) => {
 
         const errors = []
         if(stars > 5 || stars < 1) errors.push("Rating must be between 1 and 5")
+        if(review.length > 254) errors.push("Review can't be longer than 255 characters")
         
   
         setValidationErrors(errors)
-      }, [stars])
+      }, [stars, review])
 
     const handleSubmit = async (e) => {
         e.preventDefault();

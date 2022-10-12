@@ -55,10 +55,11 @@ const UpdateSpotForm = ({closeProp}) => {
     if(lat > 90 || lat < -90) errors.push("Please provide a valid latitude")
     if(lng > 180 || lng < -180) errors.push("Please provide a valid longitude")
     if(price < 0 ) errors.push("Minimum charge can't be less than $0")
+    if(description.length > 254) errors.push("Description can't be longer than 255 characters")
 
     setValidationErrors(errors)
     dispatch(getOneSpot(spotId))
-  }, [lat, lng, price])
+  }, [lat, lng, price, description])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
