@@ -121,7 +121,7 @@ module.exports = {
         lat: 14.244324,
         lng: 14.344434,
         name: "Cozy A-Frame",
-        description: "Completely renovated in 2022, Applewood Lodge is large enough for 8 but also perfect for a romantic getaway for 2. It is nestled in nature but also close to everything the area has to offer.",
+        description: "Completely renovated in 2022, Applewood Lodge is large enough for 8 but also perfect for a romantic getaway for 2.",
         price: 150
     },
 
