@@ -39,7 +39,7 @@ function Navigation({ isLoaded }){
   return (
     <nav className="navbar">
       
-        <NavLink exact to="/"><img className = "logo" src = "https://iili.io/LASpOG.png" /></NavLink>
+        <NavLink exact to="/"><img className = "logo" src = "https://i.ibb.co/Pz44FLZ/ashbnb-logo.png" /></NavLink>
         {isLoaded && sessionLinks}
         
     </nav>

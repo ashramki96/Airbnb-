@@ -295,7 +295,7 @@ router.get('/:spotid', async (req, res) => {
   const userDetails = await spot.getUser({ attributes: ["id", "firstName", "lastName"] })
   const reviewDetails = await spot.getReviews({
     attributes:
-    [[sequelize.fn('ROUND', sequelize.fn("AVG", sequelize.col("stars")),1), "avgStarRating"]],
+    [[sequelize.fn('ROUND', sequelize.fn("AVG", sequelize.col("stars")), 1), "avgStarRating"]],
       
     raw: true, nest: true
   })

@@ -22,7 +22,7 @@ function CreateReviewModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Create a Review</button>
+      <button className = 'reviewButton' onClick={() => setShowModal(true)}>Create a Review</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)} >
           <CreateReview closeProp = {closeModal}/>

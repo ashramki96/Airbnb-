@@ -45,11 +45,10 @@ const AllReviewsSpot = () => {
         {/* <h2>Reviews:</h2> */}
         {reviews.map((review) => {
             return (
-                <div >
-                <div className = "reviewer">{review.User.firstName}</div>
-                <div>{review.review}</div>
-                <div>★{review.stars}</div>
-                {sessionUserId === review.userId ? <button onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}
+                <div className = "reviewInnerContainer">
+                <div className = "reviewer">{review.User.firstName} ★ {review.stars} {sessionUserId === review.userId ? <button className = 'deleteReviewButton' onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}</div>
+                <div className = 'review'>{review.review}</div> 
+                
                 
                 </div>
                 

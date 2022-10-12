@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { createReview, getReviews } from '../../store/reviews';
 import { Link, Route, useParams } from 'react-router-dom';
 import { getSpots, getOneSpot } from '../../store/spots';
+import './CreateReview.css';
+
 
 
 const CreateReview = ({closeProp}) => {

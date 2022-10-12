@@ -11,7 +11,7 @@ function UpdateSpotFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Update Spot</button>
+      <button className = 'updateSpotButton' onClick={() => setShowModal(true)}>Update Spot</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <UpdateSpotForm closeProp = {closeModal}/>

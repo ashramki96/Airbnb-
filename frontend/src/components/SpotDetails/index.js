@@ -72,7 +72,7 @@ const SpotDetails = () => {
     return (
         <div className = "spotDetails">
             <h1>{spot.name}</h1> {sessionUserId && sessionUserId === spotOwnerId ? 
-            <button onClick={handleDelete}>Delete Spot</button> : null}
+            <button className = 'deleteSpotButton' onClick={handleDelete}>Delete Spot</button> : null}
             {sessionUserId && sessionUserId === spotOwnerId ? <UpdateSpotForm /> : null}
              <h4>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} • {reviewsArr.length} reviews • {spot.address}</h4>
             <div><img className = "spotImg" src={spot.SpotImages[0].url}></img></div>
@@ -86,9 +86,10 @@ const SpotDetails = () => {
             
            
 
-            <h2>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} • {reviewsArr.length} Reviews: </h2>
-            <div>{!spot.avgStarRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
+            <h2>★ {!spot.avgStarRating ? "0" : spot.avgStarRating} · {reviewsArr.length} Reviews  </h2>
             {sessionUserId && userReview.length === 0 && sessionUserId !== spotOwnerId ? <CreateReview />: null}
+            <div>{!spot.avgStarRating ? "This is a brand new spot. No reviews yet!" : <AllReviewsSpot />} </div>
+           
         </div>
     )
 

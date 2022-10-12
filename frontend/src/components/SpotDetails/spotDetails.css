@@ -1,0 +1,14 @@
+.deleteButton {
+    width: 15%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #e6005c;
+    border-radius: 6px;
+    border-color: #e6005c;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+}
