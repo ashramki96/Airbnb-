@@ -5,11 +5,20 @@ import * as sessionActions from '../../store/session';
 import './Navigation.css'
 import { NavLink } from 'react-router-dom';
 import { Link, Route, useParams } from 'react-router-dom';
+import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
+import LoginForm from "../LoginFormModal/LoginForm";
+import SignupForm from "../SignupFormModal/SignupForm";
+import { Modal } from '../../context/Modal';
+import CreateSpotFormModal from "../CreateSpotForm";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const [showMenu, setShowMenu] = useState(false);
+
+  const [showLoginFormModal, setShowLoginFormModal] = useState(false);
+  const [showSignupFormModal, setShowSignupFormModal] = useState(false);
   
   const openMenu = () => {
     if (showMenu) return;
@@ -31,6 +40,8 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    setShowLoginFormModal(false);
+    setShowSignupFormModal(false);
     history.push('/')
   };
 
@@ -40,9 +51,12 @@ function ProfileButton({ user }) {
 
     dropDownLinks = (
     <>
+    <CreateSpotFormModal />
     <img className = "menuBar" onClick={openMenu}src = "https://static.thenounproject.com/png/659803-200.png"></img>
       
     {showMenu && (
+      
+
       <div className="profile-dropdown">
         <div className = 'dropdownItems'>{user.firstName} {user.lastName}</div>
         <div className = 'dropdownItems'><Link to = {`/current/spots`}>My Spots</Link></div>
@@ -54,7 +68,36 @@ function ProfileButton({ user }) {
     </>
     )
    }
-  //else NEED TO DO
+  else {
+    dropDownLinks = (
+      <>
+    <img className = "menuBar" onClick={openMenu}src = "https://static.thenounproject.com/png/659803-200.png"></img>
+
+      {showMenu && (
+        <div className="profile-dropdown">
+        <div className = 'dropdownItems' onClick = {() => setShowLoginFormModal(true)}>Log in</div>
+        <div className = 'dropdownItems' onClick = {() => setShowSignupFormModal(true)}>Sign up</div>
+        
+      </div>
+      )}
+
+      {showLoginFormModal && (
+          <Modal onClose={() => setShowLoginFormModal(false)}>
+            <LoginForm />
+          </Modal>
+        )}
+      
+
+      {showSignupFormModal && (
+        <Modal onClose={() => setShowSignupFormModal(false)}>
+        <SignupForm />
+      </Modal>
+      )}
+
+      </>
+
+    )
+  }
 
 
   return (
