@@ -4,6 +4,10 @@
   align-items: center;
   height: 60px;
   border-bottom: #D3D3D3 1px solid;
+  /* position: fixed;
+top: 0px;
+background-color: white; */
+
 }
 
 .logo {
@@ -30,11 +34,12 @@
   width: 25px;
   height: auto;
   padding-right: 30px;
+  cursor: pointer;
 }
 
 .profile-dropdown {
   height: 100px;
-  width: 200px;
+  width: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -44,13 +49,23 @@
   top: 9%;
   left: 85%;
   z-index: 1;
-  box-shadow: 1px 1px #888888; 
+  box-shadow: 1px 1px 1px 1px #888888; 
 
 }
+
+
+
 
 .dropdownItems {
   padding-left: 15px;
   cursor: pointer;
+
+}
+
+.dropdownItems:hover {
+
+    font-weight: bold;
+
 }
 
 .loginSignup {
@@ -67,3 +82,16 @@
   z-index: 1;
   box-shadow: 1px 1px #888888; 
 }
+
+.navLinksContainer {
+  display: flex;
+  align-items: center;
+}
+
+.welcomeName {
+  padding-left: 50px;
+  padding-right: 65px;
+  /* font-weight: bold; */
+  
+}
+

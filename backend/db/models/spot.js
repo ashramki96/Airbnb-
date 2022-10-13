@@ -42,13 +42,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     lat: {
       type: DataTypes.FLOAT,
-      allowNull: false,
-      unique: true
+      allowNull: false
     },
     lng: {
       type: DataTypes.FLOAT,
-      allowNull: false,
-      unique: true
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,

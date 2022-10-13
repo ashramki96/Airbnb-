@@ -51,7 +51,7 @@ const AllSpotsCurrentUser = () => {
                     <div className = 'spotRating'><div className = "star"><i class="fa-sharp fa-solid fa-star fa-xs"></i></div>  <div className = "avgRating">{!spot.avgRating ? "0" : spot.avgRating}</div></div>
                     </div>
                     <div className='spotAddress'>{spot.city}, {spot.state}</div>
-                    <div classNAme='spotPrice'>${spot.price}</div>
+                    <div className='spotPrice'>${spot.price}</div>
                     
                 </Link>
             </div>

@@ -51,14 +51,16 @@ function ProfileButton({ user }) {
 
     dropDownLinks = (
     <>
+    <div className = "navLinksContainer">
     <CreateSpotFormModal />
+    <div className = "welcomeName"> Welcome {user.firstName}!</div>
     <img className = "menuBar" onClick={openMenu}src = "https://static.thenounproject.com/png/659803-200.png"></img>
-      
+    </div>
     {showMenu && (
       
 
       <div className="profile-dropdown">
-        <div className = 'dropdownItems'>{user.firstName} {user.lastName}</div>
+        
         <div className = 'dropdownItems'><Link to = {`/current/spots`}>My Spots</Link></div>
         <div>
           <div className = 'dropdownItems' onClick={logout}>Log Out</div>
@@ -77,8 +79,8 @@ function ProfileButton({ user }) {
         <div className="profile-dropdown">
         <div className = 'dropdownItems' onClick = {() => setShowLoginFormModal(true)}>Log in</div>
         <div className = 'dropdownItems' onClick = {() => setShowSignupFormModal(true)}>Sign up</div>
-        
       </div>
+      
       )}
 
       {showLoginFormModal && (
