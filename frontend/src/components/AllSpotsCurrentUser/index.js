@@ -48,7 +48,7 @@ const AllSpotsCurrentUser = () => {
                     <div><img className='spotImage' src={spot.previewImage} width="200" height="150"></img></div>
                     <div className = 'spotDeets'>
                     <div className = 'spotName'>{spot.name}</div>
-                    <div className = 'spotRating'>★{spot.avgRating}</div>
+                    <div className = 'spotRating'><div className = "star"><i class="fa-sharp fa-solid fa-star fa-xs"></i></div>  <div className = "avgRating">{!spot.avgRating ? "0" : spot.avgRating}</div></div>
                     </div>
                     <div className='spotAddress'>{spot.city}, {spot.state}</div>
                     <div classNAme='spotPrice'>${spot.price}</div>
