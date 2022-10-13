@@ -17,12 +17,6 @@
   
 }
 
-.hamburger {
-  
-  cursor: pointer;
-  
-
-}
 
 .line {
   display: block;
@@ -30,4 +24,46 @@
   height: 3px;
   margin: 5px auto;
   background-color: black;
+}
+
+.menuBar{
+  width: 25px;
+  height: auto;
+  padding-right: 30px;
+}
+
+.profile-dropdown {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  position: absolute;
+  background-color: white;
+  top: 9%;
+  left: 85%;
+  z-index: 1;
+  box-shadow: 1px 1px #888888; 
+
+}
+
+.dropdownItems {
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.loginSignup {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  position: absolute;
+  background-color: white;
+  top: 9%;
+  left: 85%;
+  z-index: 1;
+  box-shadow: 1px 1px #888888; 
 }

@@ -8,31 +8,52 @@ import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 import CreateSpotForm from '../CreateSpotForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './Navigation.css'
+import { useState, useEffect } from "react";
 
 
 function Navigation({ isLoaded }){
+
+  //added
+  // const [showMenu, setShowMenu] = useState(false);
+  
+  // const openMenu = () => {
+  //   if (showMenu) return;
+  //   setShowMenu(true);
+  // };
+  
+  // useEffect(() => {
+  //   if (!showMenu) return;
+
+  //   const closeMenu = () => {
+  //     setShowMenu(false);
+  //   };
+
+  //   document.addEventListener('click', closeMenu);
+  
+  //   return () => document.removeEventListener("click", closeMenu);
+  // }, [showMenu]);
+
+  //added up
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-      <ProfileButton user={sessionUser} />
       <CreateSpotForm />
-      <Link to = {`/current/spots`}><button>My Spots</button></Link>
+      <ProfileButton user={sessionUser} />
       </>
     );
   } else {
     sessionLinks = (
-      <div>
-       {/* <button className='hamburger'>
-            Hamburger
-        </button> */}
-      <ul className = "sessionLinks">
-        <li><LoginFormModal /></li>
-        <li><SignupFormModal /></li>
+      <div className = 'loginSignupContainer'>
+      
+      <div className = "loginSignup">
+        <div><LoginFormModal /></div>
+        <div><SignupFormModal /></div>
         
-      </ul>
+      </div>
       </div>
     );
   }
@@ -44,17 +65,6 @@ function Navigation({ isLoaded }){
         
     </nav>
   );
-
-  // return (
-  //   <div className="navbar">
-  //     <div>
-  //       <NavLink exact to="/"><img className = "logo" src = "https://iili.io/LASpOG.png" /></NavLink>
-        
-  //         {isLoaded && sessionLinks}
-        
-  //     </div>
-  //   </div>
-  // );
 }
 
 export default Navigation;

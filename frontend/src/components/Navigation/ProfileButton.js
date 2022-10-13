@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
+import './Navigation.css'
+import { NavLink } from 'react-router-dom';
+import { Link, Route, useParams } from 'react-router-dom';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -31,20 +34,34 @@ function ProfileButton({ user }) {
     history.push('/')
   };
 
+   let dropDownLinks
+
+   if(user) {
+
+    dropDownLinks = (
+    <>
+    <img className = "menuBar" onClick={openMenu}src = "https://static.thenounproject.com/png/659803-200.png"></img>
+      
+    {showMenu && (
+      <div className="profile-dropdown">
+        <div className = 'dropdownItems'>{user.firstName} {user.lastName}</div>
+        <div className = 'dropdownItems'><Link to = {`/current/spots`}>My Spots</Link></div>
+        <div>
+          <div className = 'dropdownItems' onClick={logout}>Log Out</div>
+        </div>
+      </div>
+    )}
+    </>
+    )
+   }
+  //else NEED TO DO
+
+
   return (
     <>
-      <button onClick={openMenu}>
-        <i class="fas fa-user-circle" />
-      </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
-      )}
+      
+      {dropDownLinks}
+
     </>
   );
 }

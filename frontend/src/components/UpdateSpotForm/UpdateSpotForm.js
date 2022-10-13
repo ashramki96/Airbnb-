@@ -38,17 +38,6 @@ const UpdateSpotForm = ({closeProp}) => {
   const updateState = (e) => setState(e.target.value)
 
 
-  // useEffect(() => {
-
-  //   const errors = []
-  //   if(lat > 90 || lat < -90) errors.push("Please provide a valid latitude")
-  //   if(lng > 180 || lng < -180) errors.push("Please provide a valid longitude")
-  //   if(price < 0 ) errors.push("Minimum charge can't be less than $0")
-
-  //   setValidationErrors(errors)
-  //   dispatch(getSpots())
-  // }, [lat, lng, price])
-
   useEffect(() => {
 
     const errors = []
