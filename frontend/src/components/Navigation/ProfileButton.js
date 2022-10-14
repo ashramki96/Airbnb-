@@ -55,6 +55,7 @@ function ProfileButton({ user }) {
     <CreateSpotFormModal />
     <div className = "welcomeName"> Welcome {user.firstName}!</div>
     <img className = "menuBar" onClick={openMenu}src = "https://static.thenounproject.com/png/659803-200.png"></img>
+   
     </div>
     {showMenu && (
       
@@ -74,7 +75,8 @@ function ProfileButton({ user }) {
     dropDownLinks = (
       <>
     <img className = "menuBar" onClick={openMenu}src = "https://static.thenounproject.com/png/659803-200.png"></img>
-
+   
+    
       {showMenu && (
         <div className="profile-dropdown">
         <div className = 'dropdownItems' onClick = {() => setShowLoginFormModal(true)}>Log in</div>

@@ -30,15 +30,24 @@ background-color: white; */
   background-color: black;
 }
 
+.menuContainer {
+  margin-right: 10%;
+
+}
+
 .menuBar{
   width: 25px;
   height: auto;
   padding-right: 30px;
   cursor: pointer;
+  /* border: 1px solid #555;
+  border-radius: 20px; */
 }
 
+
+
 .profile-dropdown {
-  height: 100px;
+  height: 90px;
   width: 190px;
   display: flex;
   flex-direction: column;
@@ -49,7 +58,7 @@ background-color: white; */
   top: 9%;
   left: 85%;
   z-index: 1;
-  box-shadow: 1px 1px 1px 1px #888888; 
+  box-shadow: 1px 5px 12px 1px lightgray; 
 
 }
 
