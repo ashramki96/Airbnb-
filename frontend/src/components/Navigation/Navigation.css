@@ -104,3 +104,35 @@ background-color: white; */
   
 }
 
+.spotPoints {
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.belowSpotPoints{
+  color: grey;
+  padding-top: 5px;
+  padding-left: 33px;
+}
+
+.spotPointsContainer {
+  padding-bottom: 30px;
+  border-bottom: #D3D3D3 1px solid;
+}
+
+#freeCancel {
+  padding-left: 15px;
+}
+
+#greatLocation {
+  padding-left: 15px;
+
+}
+
+#greatLocation {
+  padding-left: 15px;
+}
+
+#greatCheckin {
+  padding-left: 15px;
+}

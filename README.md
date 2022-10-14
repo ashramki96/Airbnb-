@@ -1,22 +1,29 @@
 # Ashbnb
 
 
-Ashbnb is a website clone, inspired by Airbnb. It's an online marketplace for lodging. It's primarily used for vacation rentals and work trips. 
+## [Ashbnb](https://ashbnb.herokuapp.com/) is a website clone, inspired by [Airbnb](https://www.airbnb.com/)
+<p align ="center">
+<img src="https://iili.io/Zf4IwB.png"></img>
+</p>
+Links to project Wiki:
 
-Please see below links to project Wiki:
+* ### [API Routes Documentation](https://github.com/ashramki96/Airbnb-/wiki/API-Routes)
 
-[Feature List](https://github.com/ashramki96/Airbnb-/wiki/Feature-List)
-[Database Schema](https://github.com/ashramki96/Airbnb-/wiki/Database-Schema-Image)
-[Frontend Routes]()
-[API Routes](https://github.com/ashramki96/Airbnb-/wiki/API-Routes)
-[Redux Store State Shape](https://github.com/ashramki96/Airbnb-/wiki/Redux-State-Shape)
+* ### [Database Schema](https://github.com/ashramki96/Airbnb-/wiki/Database-Schema-Image)
+
+* ### [Feature List](https://github.com/ashramki96/Airbnb-/wiki/Feature-List)
+
+* ### [Redux State Shape](https://github.com/ashramki96/Airbnb-/wiki/Redux-State-Shape)
+
 
 This project is built with:
 
-Javascript
-PostgreSQL
-Sequelize
-Express
-React
-Redux
+* Javascript
+* PostgreSQL
+* Sequelize
+* Express
+* React
+* Redux
+
+
 
