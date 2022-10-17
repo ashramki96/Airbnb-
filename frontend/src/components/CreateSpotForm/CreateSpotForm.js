@@ -126,6 +126,7 @@ const CreateSpotForm = ({closeProp}) => {
               
               <input
               placeholder = "Latitude"
+              required
               type="text"
               value={lat}
               onChange={updateLat} />
@@ -133,6 +134,7 @@ const CreateSpotForm = ({closeProp}) => {
               
               <input
               placeholder = "Longitude"
+              required
               type="text"
               value={lng}
               onChange={updateLng} />

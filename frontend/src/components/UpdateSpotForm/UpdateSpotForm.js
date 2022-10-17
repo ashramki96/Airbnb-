@@ -136,7 +136,7 @@ const UpdateSpotForm = ({closeProp}) => {
         <input
         placeholder = "Price"
           required
-          type="text"
+          type="number"
           value={price}
           onChange={updatePrice} />
        
