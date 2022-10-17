@@ -45,6 +45,11 @@ function ProfileButton({ user }) {
     history.push('/')
   };
 
+  const mySpots = (e) => {
+    e.preventDefault();
+    history.push('/current/spots')
+  }
+
    let dropDownLinks
 
    if(user) {
@@ -62,7 +67,8 @@ function ProfileButton({ user }) {
 
       <div className="profile-dropdown">
         
-        <div className = 'dropdownItems'><Link to = {`/current/spots`}>My Spots</Link></div>
+        {/* <div className = 'dropdownItems'><Link to = {`/current/spots`}>My Spots</Link></div> */}
+        <div className = 'dropdownItems' onClick = {mySpots}>My Spots</div>
         <div>
           <div className = 'dropdownItems' onClick={logout}>Log Out</div>
         </div>
