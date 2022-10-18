@@ -115,14 +115,14 @@ const UpdateSpotForm = ({closeProp}) => {
         <input
         placeholder = "Latitude"
           required
-          type="text"
+          type="number"
           value={lat}
           onChange={updateLat} />
        
         <input
         placeholder = "Longitude"
           required
-          type="text"
+          type="number"
           value={lng}
           onChange={updateLng} />
        
