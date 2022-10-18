@@ -117,7 +117,7 @@ background-color: white; */
 
 .spotPointsContainer {
   padding-bottom: 30px;
-  border-bottom: #D3D3D3 1px solid;
+  /* border-bottom: #D3D3D3 1px solid; */
 }
 
 #freeCancel {

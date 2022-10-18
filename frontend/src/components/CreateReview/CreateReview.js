@@ -71,6 +71,7 @@ const CreateReview = ({closeProp}) => {
                 
                 <input
                     placeholder = 'Review'
+                    required
                     id="review"
                     type="text"
                     value={review}
@@ -85,7 +86,7 @@ const CreateReview = ({closeProp}) => {
                     value={stars}
                     onChange={updateStars} />
 
-               <button className = "submitButton" type="submit">Create review</button>
+               <button className = "submitButton" type="submit" disabled = {validationErrors.length > 0}>Create review</button>
 
             </form>
         </div>

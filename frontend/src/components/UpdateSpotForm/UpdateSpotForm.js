@@ -148,7 +148,7 @@ const UpdateSpotForm = ({closeProp}) => {
           onChange={updateState} />
 
 
-        <button className = 'submitButton' type="submit">Update Spot</button>
+        <button className = 'submitButton' type="submit" disabled = {validationErrors.length > 0}>Update Spot</button>
       </form>
     </div>
 

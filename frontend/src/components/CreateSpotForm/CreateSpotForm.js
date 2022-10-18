@@ -175,7 +175,7 @@ const CreateSpotForm = ({closeProp}) => {
             <input type="checkbox" value = {preview} onChange = {updatePreview}/> */}
               
             
-            <button className = "submitButton" type="submit">Create New Spot</button>
+            <button className = "submitButton" type="submit" disabled = {validationErrors.length > 0} >Create New Spot</button>
           </form>
           </div>
           </>

@@ -81,11 +81,14 @@ const SpotDetails = () => {
             <div className = "spotPointsContainer">
             <div className = "hostedBy">Entire spot hosted by {spot.Owner.firstName} {spot.Owner.lastName} </div>
             <div className = "spotStats">4 guests · 3 bedrooms · 1 bed · 1 bath</div>
+            {spot.avgStarRating ? <>
             <div className = "spotPoints"> <i class="fa-solid fa-location-dot"></i><span id ="greatLocation">  Great Location</span></div>
             <div className = "belowSpotPoints">90% of recent guests gave the location a 5-star rating</div>
             <div className = "spotPoints"><i class="fa-solid fa-key"></i><span id ="greatCheckin"> Great check-in experience</span></div>
             <div className = "belowSpotPoints">100% of recent guests gave the check-in process a 5-star rating.</div>
             <div className = "spotPoints"><i class="fa-solid fa-calendar"></i> <span id ="freeCancel"> Free cancellation for 48 hours</span></div>
+            </>
+            : null}
             </div>  
             <img className = "aircover" src = "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
             <div className = "aircoverText">Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</div>
