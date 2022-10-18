@@ -47,9 +47,14 @@ const CreateSpotForm = ({closeProp}) => {
       if(lng > 180 || lng < -180) errors.push("Please provide a valid longitude")
       if(price < 0 ) errors.push("Minimum charge can't be less than $0")
       if(description.length > 254) errors.push("Description can't be longer than 255 characters")
+      const urlSplit = url.split('.')
+      const urlEnd = urlSplit[urlSplit.length - 1]
+      const validUrls = ["jpg", "jpeg", "png", "img"]
+      if(url && !validUrls.includes(urlEnd)) errors.push("Please provide an image that ends with .jpg, .jpeg, .png, or .img")
 
+        
       setValidationErrors(errors)
-    }, [lat, lng, price, description])
+    }, [lat, lng, price, description, url])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
