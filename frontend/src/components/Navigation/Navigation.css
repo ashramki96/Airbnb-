@@ -55,8 +55,9 @@ background-color: white; */
   border-radius: 10px;
   position: absolute;
   background-color: white;
-  top: 9%;
-  left: 85%;
+  top: 8%;
+  /* left: 85%; */
+  right: 1.9%;
   z-index: 1;
   box-shadow: 1px 5px 12px 1px lightgray; 
 

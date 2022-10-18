@@ -67,7 +67,6 @@ function ProfileButton({ user }) {
 
       <div className="profile-dropdown">
         
-        {/* <div className = 'dropdownItems'><Link to = {`/current/spots`}>My Spots</Link></div> */}
         <div className = 'dropdownItems' onClick = {mySpots}>My Spots</div>
         <div>
           <div className = 'dropdownItems' onClick={logout}>Log Out</div>

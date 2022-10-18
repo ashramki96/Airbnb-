@@ -37,7 +37,8 @@ a:visited {
 }
 
 .spotImg {
-    height: 500px;
+    /* height: 500px; */
+    height: 600px;
     width: 100%;
     border-radius: 15px;
     object-fit: cover;
