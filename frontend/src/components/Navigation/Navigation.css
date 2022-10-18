@@ -4,9 +4,10 @@
   align-items: center;
   height: 60px;
   border-bottom: #D3D3D3 1px solid;
-  /* position: fixed;
+ 
+  position: sticky;
 top: 0px;
-background-color: white; */
+background-color: white;
 
 }
 
@@ -55,7 +56,8 @@ background-color: white; */
   border-radius: 10px;
   position: absolute;
   background-color: white;
-  top: 8%;
+  /* top: 8%; */
+  top: 65px;
   /* left: 85%; */
   right: 1.9%;
   z-index: 1;
