@@ -60,13 +60,17 @@ const SpotDetails = () => {
 
 
 
+    // const handleDelete = () => {
+    //     const deleteCurrentSpot = dispatch(deleteSpot(spotId)).then(() => dispatch(getSpots()))
+    //     history.push(`/`)
+    // }
+
     const handleDelete = () => {
-        const deleteCurrentSpot = dispatch(deleteSpot(spotId)).then(() => dispatch(getSpots()))
-        history.push(`/`)
+        const deleteCurrentSpot = dispatch(deleteSpot(spotId)).then(() => dispatch(getSpots())).then (() => history.push(`/`))
     }
 
 
-    // !userReview && 
+  
 
 
     return (
