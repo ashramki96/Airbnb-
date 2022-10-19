@@ -39,12 +39,16 @@ background-color: white;
 .menuBar{
   width: 25px;
   height: auto;
-  padding-right: 30px;
+  margin-right: 30px;
   /* padding-right: 4%; */
   cursor: pointer;
   position: relative;
 }
 
+.menuBar:hover{
+  box-shadow: 1px 5px 12px 1px lightgray; 
+  
+}
 
 
 .profile-dropdown {
