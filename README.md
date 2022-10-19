@@ -31,16 +31,16 @@ This project is built with:
 
 1. Clone the repository
 
-`git clone git@github.com:ashramki96/Airbnb-.git`
+   `git clone git@github.com:ashramki96/Airbnb-.git`
 
 2. Install dependencies 
 
-`npm install`
+   `npm install`
 
 3. Start the backend and front server
 
-`cd backend` :arrow_right: `npm start` <br>
-`cd frontend` :arrow_right: `npm start`
+   `cd backend` :arrow_right: `npm start` <br>
+   `cd frontend` :arrow_right: `npm start`
 
 ## Login as a demo user and try it out!
 
