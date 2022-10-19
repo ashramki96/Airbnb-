@@ -27,5 +27,26 @@ This project is built with:
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 
+## Run the app locally
+
+1. Clone the repository
+
+`git clone git@github.com:ashramki96/Airbnb-.git`
+
+2. Install dependencies 
+
+`npm install`
+
+3. Start the backend and front server
+
+`cd backend` :arrow_right: `npm start` <br>
+`cd frontend` :arrow_right: `npm start`
+
+## Login as a demo user and try it out!
+
+![](https://i.ibb.co/8K0GVsf/splashpagedemouser.png)
+
+
+
 
 
