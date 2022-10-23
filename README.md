@@ -42,9 +42,22 @@ This project is built with:
    `cd backend` :arrow_right: `npm start` <br>
    `cd frontend` :arrow_right: `npm start`
 
-## Login as a demo user and try it out!
+## Login as a demo user to get started
 
 ![](https://i.ibb.co/8K0GVsf/splashpagedemouser.png)
+
+## Create you first spot
+
+![](https://i.ibb.co/wQxkRqL/create-Aspot.png)
+
+## Made a typo? Edit your spot
+
+![](https://i.ibb.co/ByvkLpR/editspot.png)
+
+## Create a review on a spot you visited
+
+![](https://i.ibb.co/mNTsDq4/createreview.png)
+
 
 
 
