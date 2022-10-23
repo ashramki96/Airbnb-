@@ -58,6 +58,11 @@ This project is built with:
 
 ![](https://i.ibb.co/mNTsDq4/createreview.png)
 
+## Features on the way
+
+* Bookings
+* My Reviews page
+* Search bar
 
 
 
