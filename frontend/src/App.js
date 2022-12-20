@@ -19,6 +19,7 @@ function App() {
 
   return (
     <>
+    <div className = "page-container">
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -36,7 +37,22 @@ function App() {
           </Route>
           
         </Switch>
+        
       )}
+      </div>
+      <footer className="footer">
+          <div className="footer-about">
+            <strong>Ashbnb, a clone of Airbnb. By Ashwin Ramakrishnan</strong>
+          </div>
+          <div className="footer-links">
+            <a id="github" className="links-github" href="https://github.com/ashramki96/Rabbit-">
+              <i className="fa-brands fa-github fa-xl"></i>
+            </a>
+            <a id="linkedin" className="links-github" href="https://www.linkedin.com/in/ashwin-ramakrishnan-4910b9b1/">
+              <i className="fa-brands fa-linkedin fa-xl"></i>
+            </a>
+          </div>
+      </footer>
     </>
   );
 }

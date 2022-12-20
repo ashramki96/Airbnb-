@@ -4,6 +4,8 @@ import { Link, Route, useParams } from 'react-router-dom';
 import { getReviews } from '../../store/reviews';
 import { deleteReview } from '../../store/reviews';
 import { getSpots, getOneSpot } from '../../store/spots';
+import UpdateReviewFormModal from '../UpdateReview';
+import UpdateReview from '../UpdateReview';
 
 const AllReviewsSpot = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -46,7 +48,7 @@ const AllReviewsSpot = () => {
         {reviews.map((review) => {
             return (
                 <div className = "reviewInnerContainer">
-                <div className = "reviewer">{review.User.firstName} <i class="fa-sharp fa-solid fa-star fa-xs"></i> {review.stars} {sessionUserId === review.userId ? <button className = 'deleteReviewButton' onClick = {() => handleDelete(review.id)}>Delete Review</button> : null}</div>
+                <div className = "reviewer">{review.User.firstName} <i class="fa-sharp fa-solid fa-star fa-xs"></i> {review.stars} {sessionUserId === review.userId ? <><UpdateReviewFormModal currReview = {review}/> <button className = 'deleteReviewButton' onClick = {() => handleDelete(review.id)}>Delete Review</button></> : null}</div>
                 <div className = 'review'>{review.review}</div> 
                 
                 

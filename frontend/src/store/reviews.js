@@ -4,6 +4,7 @@ import { getSpots } from "./spots"
 const READ = 'reviews/READ'
 const CREATE = 'reviews/CREATE'
 const DELETE = 'reviews/DELETE'
+const UPDATE = 'reviews/UPDATE'
 
 const read = reviews => ({
     type: READ,
@@ -12,6 +13,11 @@ const read = reviews => ({
 
 const create = review => ({
     type: CREATE,
+    review
+})
+
+const update = review => ({
+    type: UPDATE,
     review
 })
 
@@ -55,6 +61,23 @@ export const createReview = (reviewPayload, spotId) => async dispatch => {
         return review
     }
 }
+
+// export const updateReview = (reviewPayload, spotId, reviewid) => async dispatch => {
+//     console.log("DID THIS WORK 3")
+//     const response = await csrfFetch(`/api/reviews/${reviewid}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(reviewPayload)
+//     })
+
+//     if(response.ok) {
+//         const review = await response.json()
+//         dispatch(update(review))
+//         return review
+//     }
+// }
 
 const initalState = {
     
