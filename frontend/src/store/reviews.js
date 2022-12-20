@@ -62,22 +62,22 @@ export const createReview = (reviewPayload, spotId) => async dispatch => {
     }
 }
 
-// export const updateReview = (reviewPayload, spotId, reviewid) => async dispatch => {
-//     console.log("DID THIS WORK 3")
-//     const response = await csrfFetch(`/api/reviews/${reviewid}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(reviewPayload)
-//     })
+export const updateReview = (reviewPayload, spotId, reviewid) => async dispatch => {
+    console.log("DID THIS WORK 3")
+    const response = await csrfFetch(`/api/reviews/${reviewid}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reviewPayload)
+    })
 
-//     if(response.ok) {
-//         const review = await response.json()
-//         dispatch(update(review))
-//         return review
-//     }
-// }
+    if(response.ok) {
+        const review = await response.json()
+        dispatch(update(review))
+        return review
+    }
+}
 
 const initalState = {
     
