@@ -25,7 +25,7 @@ const CreateBooking = ({sessionUser}) => {
             endDate
         }
 
-        const createdBooking = await dispatch(createbooking(bookingPayload, +spotId)).then (() => dispatch(getbookings(spotId))).then (() => dispatch(getOneSpot(spotId)))
+        const createdBooking = await dispatch(createbooking(bookingPayload, spotId)).then (() => dispatch(getbookings(spotId))).then (() => dispatch(getOneSpot(spotId)))
         history.push("/")
     }
 

@@ -22,8 +22,9 @@
 .bookings-form {
     margin-top: 6%;
     margin-left: 10%;
-    width: 20%;
-    border: 1px solid rgb(211, 202, 202);
+    width: 30%;
+    border: 1px solid rgb(163, 156, 156);
     padding: 40px;
     border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgb(218, 216, 216)
 }

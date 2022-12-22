@@ -401,7 +401,8 @@ router.delete('/:spotid', requireAuth, async (req, res) => {
 router.post('/:spotid/bookings', requireAuth, async (req, res) => {
   const { startDate, endDate } = req.body
   const { user } = req
-  const { spotid } = req.params
+  let { spotid } = req.params
+  spotid = parseInt(spotid)
   let start = Date.parse(startDate) //324234343242
   let end = Date.parse(endDate) //23434324324
   if (end <= start) {
@@ -505,7 +506,8 @@ router.post('/:spotid/bookings', requireAuth, async (req, res) => {
 //Get all Bookings for a Spot based on the Spot's id
 router.get('/:spotid/bookings', requireAuth, async (req, res) => {
   const { user } = req
-  const { spotid } = req.params
+  let { spotid } = req.params
+  spotid = parseInt(spotid)
   const allBookings = []
   const bookings = await Booking.findAll({
     where: {

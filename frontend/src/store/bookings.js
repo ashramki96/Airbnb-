@@ -38,7 +38,7 @@ export const deletebooking = (bookingId) => async dispatch => {
 
 export const getbookings = (spotid) => async (dispatch) => {
     console.log("DID THIS WORK 9")
-    const response = await fetch(`/api/spots/${spotid}/bookings`);
+    const response = await fetch(`/api/spots/${parseInt(spotid)}/bookings`);
     if(response.ok) {
         const bookings = await response.json();
         dispatch(read(bookings))
@@ -47,7 +47,7 @@ export const getbookings = (spotid) => async (dispatch) => {
 
 export const createbooking = (bookingPayload, spotid) => async dispatch => {
     console.log("DID THIS WORK 2")
-    const response = await csrfFetch(`/api/spots/${spotid}/bookings`, {
+    const response = await csrfFetch(`/api/spots/${parseInt(spotid)}/bookings`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -57,6 +57,7 @@ export const createbooking = (bookingPayload, spotid) => async dispatch => {
 
     if(response.ok) {
         const booking = await response.json()
+        console.log("Booking is", booking)
         dispatch(create(booking))
         return booking
     }
@@ -73,7 +74,9 @@ export const updatebooking = (bookingPayload, spotId, bookingid) => async dispat
     })
 
     if(response.ok) {
+        
         const booking = await response.json()
+        
         dispatch(update(booking))
         return booking
     }

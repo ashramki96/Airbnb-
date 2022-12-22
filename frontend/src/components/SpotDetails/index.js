@@ -101,8 +101,8 @@ const SpotDetails = () => {
             </>
             : null}
             </div>  
-            <div className = "bookings-form">{sessionUserId && sessionUserId !== spotOwnerId ? <CreateBooking sessionUser = {sessionUser}/> : null}</div>
-            </div>
+            {sessionUserId && sessionUserId !== spotOwnerId ? <div className = "bookings-form"><CreateBooking sessionUser = {sessionUser}/> </div>: null}</div>
+            
             <img className = "aircover" src = "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
             <div className = "aircoverText">Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</div>
             </div>
