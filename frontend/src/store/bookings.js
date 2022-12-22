@@ -45,9 +45,9 @@ export const getbookings = (spotid) => async (dispatch) => {
     }
 }
 
-export const createbooking = (bookingPayload, spotId) => async dispatch => {
+export const createbooking = (bookingPayload, spotid) => async dispatch => {
     console.log("DID THIS WORK 2")
-    const response = await csrfFetch(`/api/spots/${spotId}/bookings`, {
+    const response = await csrfFetch(`/api/spots/${spotid}/bookings`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

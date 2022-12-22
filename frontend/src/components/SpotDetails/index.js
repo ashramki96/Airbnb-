@@ -9,6 +9,8 @@ import CreateReview from '../CreateReview';
 import { getSpots, getOneSpot } from '../../store/spots';
 import { getReviews } from '../../store/reviews';
 import { getbookings } from '../../store/bookings';
+import CreateBooking from '../CreateBooking';
+import './spotDetails.css'
 
 const SpotDetails = () => {
     const dispatch = useDispatch()
@@ -84,6 +86,8 @@ const SpotDetails = () => {
             <div><img className = "spotImg" src={spot.SpotImages[0].url}></img></div>
             <div className = "aircoverGrid">
 
+            <div className = "stats-booking">
+
             <div className = "spotPointsContainer">
             <div className = "hostedBy">Entire spot hosted by {spot.Owner.firstName} {spot.Owner.lastName} </div>
             <div className = "spotStats">4 guests · 3 bedrooms · 1 bed · 1 bath</div>
@@ -93,9 +97,12 @@ const SpotDetails = () => {
             <div className = "spotPoints"><i class="fa-solid fa-key"></i><span id ="greatCheckin"> Great check-in experience</span></div>
             <div className = "belowSpotPoints">100% of recent guests gave the check-in process a 5-star rating.</div>
             <div className = "spotPoints"><i class="fa-solid fa-calendar"></i> <span id ="freeCancel"> Free cancellation for 48 hours</span></div>
+            
             </>
             : null}
             </div>  
+            <div className = "bookings-form">{sessionUserId && sessionUserId !== spotOwnerId ? <CreateBooking sessionUser = {sessionUser}/> : null}</div>
+            </div>
             <img className = "aircover" src = "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
             <div className = "aircoverText">Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</div>
             </div>
