@@ -1,6 +1,58 @@
 .book{
-    text-align: center;
     margin-bottom: 5%;
-    font-weight: bold;
+    
     font-size: 18px;
+}
+
+.topBookings{
+ display: flex;
+ justify-content: space-between;
+}
+
+.dateInputsContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dateinputleft{
+    border-radius: 6px 0px 0px 6px;
+    border-right: thin
+    
+}
+
+.dateinputright{
+    border-radius: 0px 6px 6px 0px;
+}
+
+.charge {
+    text-align: center;
+}
+
+.bookingpricecontainer{
+    margin-top: 8%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.underlinethis{
+    text-decoration: underline;
+}
+
+.TotalContainer{
+    margin-top: 10%;
+    
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.border{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-top: 1px solid rgb(202, 196, 196);
+}
+
+.taxestotal{
+padding-top: 5%;
 }

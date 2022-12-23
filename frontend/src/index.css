@@ -57,12 +57,13 @@ a:visited {
 }
 
 .spotStats {
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     border-bottom: #D3D3D3 1px solid;
 }
 
 .aircover {
     height: 25px;
+    margin-top: 5%;
     padding-top: 15px;
     padding-bottom: 25px;
 }
