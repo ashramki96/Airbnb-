@@ -552,10 +552,22 @@ router.get('/:spotid/bookings', requireAuth, async (req, res) => {
   else {
     for (let j = 0; j < bookings.length; j++) {
       const booking = bookings[j]
+      const userDetails = await booking.getUser({
+        attributes: ["id", "firstName", "lastName"], raw: true, nest: true
+      })
       const bookingDetails = {
+        id: booking.id,
         spotId: booking.spotId,
+        userId: booking.userId,
         startDate: booking.startDate,
         endDate: booking.endDate,
+        createdAt: booking.createdAt,
+        updatedAt: booking.updatedAt,
+        User: {
+          id: userDetails.id,
+          firstName: userDetails.firstName,
+          lastName: userDetails.lastName
+        }
       }
 
       allBookings.push(bookingDetails)

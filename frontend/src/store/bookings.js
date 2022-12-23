@@ -41,6 +41,7 @@ export const getbookings = (spotid) => async (dispatch) => {
     const response = await fetch(`/api/spots/${parseInt(spotid)}/bookings`);
     if(response.ok) {
         const bookings = await response.json();
+        console.log("bookings is", bookings)
         dispatch(read(bookings))
     }
 }
@@ -97,6 +98,10 @@ const bookingsReducer = (state = initalState, action) => {
             ...state,
             ...allbookings
            }
+        case CREATE:
+            const createdState = {...state}
+            createdState[action.booking.id] = action.booking
+            return createdState
         case DELETE:
             const newState = {...state}
             delete newState[action.booking]
