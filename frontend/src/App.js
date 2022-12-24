@@ -8,6 +8,7 @@ import AllSpots from "./components/AllSpots";
 import SpotDetails from "./components/SpotDetails";
 import CreateSpotForm from "./components/CreateSpotForm";
 import AllSpotsCurrentUser from "./components/AllSpotsCurrentUser";
+import AllBookingsCurrentUser from "./components/AllBookingsCurrentUser";
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/current/spots">
             <AllSpotsCurrentUser />
+          </Route>
+          <Route path="/current/bookings">
+            <AllBookingsCurrentUser />
           </Route>
           <Route path="/spots/:spotId">
             <SpotDetails />

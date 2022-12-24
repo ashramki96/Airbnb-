@@ -408,7 +408,7 @@ router.post('/:spotid/bookings', requireAuth, async (req, res) => {
   if (end <= start) {
     res.statusCode = 400
     return res.json({
-      message: "Validation error",
+      message: "Checkout date cannot be before the check-in date",
       statusCode: 400,
       errors: {
         "endDate": "endDate cannot be on or before startDate"

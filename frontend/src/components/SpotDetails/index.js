@@ -8,7 +8,7 @@ import AllReviewsSpot from '../AllReviewsSpot';
 import CreateReview from '../CreateReview';
 import { getSpots, getOneSpot } from '../../store/spots';
 import { getReviews } from '../../store/reviews';
-import { getbookings } from '../../store/bookings';
+import { getbookings, getUserbookings } from '../../store/bookings';
 import CreateBooking from '../CreateBooking';
 import './spotDetails.css'
 
@@ -47,6 +47,7 @@ const SpotDetails = () => {
         dispatch(getOneSpot(spotId));
         dispatch(getReviews(spotId));
         dispatch(getbookings(spotId));
+        // dispatch(getUserbookings());
     }, [spotId])
 
     

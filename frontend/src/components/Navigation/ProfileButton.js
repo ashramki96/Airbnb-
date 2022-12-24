@@ -50,6 +50,11 @@ function ProfileButton({ user }) {
     history.push('/current/spots')
   }
 
+  const myBookings = (e) => {
+    e.preventDefault();
+    history.push('/current/bookings')
+  }
+
    let dropDownLinks
 
    if(user) {
@@ -65,13 +70,15 @@ function ProfileButton({ user }) {
     {showMenu && (
       
 
-      <div className="profile-dropdown">
-        
-        <div className = 'dropdownItems' onClick = {mySpots}>My Spots</div>
-        <div>
-          <div className = 'dropdownItems' onClick={logout}>Log Out</div>
-        </div>
-      </div>
+          <div className="profile-dropdown">
+
+            <div className='dropdownItems' onClick={mySpots}>My Spots</div>
+
+            <div className='dropdownItems' onClick={myBookings}>My Bookings</div>
+
+            <div className='dropdownItems' onClick={logout}>Log Out</div>
+
+          </div>
     )}
     </>
     )

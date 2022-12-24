@@ -17,6 +17,10 @@ const CreateBooking = ({sessionUser, spot}) => {
     const updateStartDate = (e) => setStartDate(e.target.value)
     const updateEndDate = (e) => setEndDate(e.target.value)
     
+    useEffect(() => {
+        const errors = []
+        setValidationErrors(errors)
+    }, [startDate, endDate])
 
     const handleSubmit =async (e) => {
         e.preventDefault();
@@ -27,8 +31,19 @@ const CreateBooking = ({sessionUser, spot}) => {
             endDate
         }
 
-        const createdBooking = await dispatch(createbooking(bookingPayload, spotId)).then (() => dispatch(getbookings(spotId))).then (() => dispatch(getOneSpot(spotId)))
-        history.push("/")
+        try {
+            const createdBooking = await dispatch(createbooking(bookingPayload, spotId)).then(() => dispatch(getbookings(spotId))).then(() => dispatch(getOneSpot(spotId)))
+            history.push("/")
+        }
+
+        catch (res) {
+            const data = await res.json();
+            const errors = [];
+            if (data && data.message) {
+                errors.push(data.message);
+            }
+            setValidationErrors(errors);
+        }
     }
 
     return (
