@@ -54,7 +54,7 @@ const AllBookingsCurrentUser = () => {
                            <div className='spotName'>{booking.Spots?.name}</div>
                            <div className='spotRating'><div className="star"></div>  <div className='spotPrice'>${booking.Spots?.price} night</div></div>
                        </div>
-                       {/* <div className='spotAddress'>{booking.Spots.city}, {booking.Spots.state}</div> */}
+                      
                        <div className='spotAddress'>Check-in: {booking.startDate}</div>
                        <div className='Address'>Checkout: {booking.endDate}</div>
                        <div className="spotDeets">
