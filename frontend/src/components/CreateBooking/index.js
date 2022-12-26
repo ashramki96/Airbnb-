@@ -33,7 +33,7 @@ const CreateBooking = ({sessionUser, spot}) => {
 
         try {
             const createdBooking = await dispatch(createbooking(bookingPayload, spotId)).then(() => dispatch(getbookings(spotId))).then(() => dispatch(getOneSpot(spotId)))
-            history.push("/")
+            history.push("/current/bookings")
         }
 
         catch (res) {
