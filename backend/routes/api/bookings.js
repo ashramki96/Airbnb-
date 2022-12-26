@@ -96,7 +96,7 @@ router.put('/:bookingid', requireAuth, async (req, res) => {
   if (end <= start) {
     res.statusCode = 400
     return res.json({
-      message: "Validation error",
+      message: "End date cannot be before the Start date",
       statusCode: 400,
       errors: {
         "endDate": "endDate cannot be on or before startDate"

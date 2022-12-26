@@ -74,7 +74,7 @@ export const createbooking = (bookingPayload, spotid) => async dispatch => {
     }
 }
 
-export const updatebooking = (bookingPayload, spotId, bookingid) => async dispatch => {
+export const updatebooking = (bookingPayload, bookingid) => async dispatch => {
     console.log("DID THIS WORK 3")
     const response = await csrfFetch(`/api/bookings/${bookingid}`, {
         method: 'PUT',

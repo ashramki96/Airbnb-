@@ -6,6 +6,7 @@ import SpotDetails from '../SpotDetails';
 import { deleteSpot } from '../../store/spots';
 import { deletebooking, getUserbookings } from '../../store/bookings';
 import './AllBookings.css'
+import UpdateBookingFormModal from '../UpdateBooking';
 
 const AllBookingsCurrentUser = () => {
 
@@ -59,8 +60,9 @@ const AllBookingsCurrentUser = () => {
                        <div className="spotDeets">
                            <div className='spotPrice'>Total: ${80 + 50 + booking.Spots?.price * (Math.abs(new Date(booking.endDate) - new Date(booking.startDate))) / 86400000}</div>
                            <div className = 'bookingButtons'>
+                            <UpdateBookingFormModal currBooking = {booking} />
                                <button className='deleteBookingButton' onClick={() => handleDelete(booking.id)}>Delete Booking</button>
-                               {/* <button className='updateBookingButton' >Update Booking</button> */}
+    
                            </div>
                        </div>
 
