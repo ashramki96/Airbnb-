@@ -15,8 +15,9 @@ const AllBookingsCurrentUser = () => {
 
     const userId = useSelector(state => state.session.user.id )
     console.log("USER ID is", userId)
-    const bookings = useSelector(state => state.bookings)
-    const bookingsArr = Object.values(bookings)
+    const bookings = useSelector(state => Object.values(state.bookings))
+    const userBookings = bookings.filter(booking => booking.userId === userId )
+    const bookingsArr = userBookings
    
 
     useEffect(() => {{
@@ -38,13 +39,22 @@ const AllBookingsCurrentUser = () => {
     const handleDelete = async (bookingId) => {
         const deleteBooking = await dispatch(deletebooking(bookingId)).then (() => dispatch(getUserbookings()))
     }
+
+    if(!bookingsArr.length){
+        return (
+            <>
+            <h3 className = "noSpots">You don't have any bookings at the moment</h3>
+            <img className = "balloonPic" src = "https://media.cntraveler.com/photos/605961ae7b588da524cfef44/master/w_2580%2Cc_limit/Cappadocia-GettyImages-166186583.jpg"></img>
+            </>
+        )
+    }
     return (
         <>
         <h1 className = "mySpots">My Bookings</h1>
         <div className = 'cardOuterContainer'>
         <div className='cardInnerContainer'>
             
-            {bookingsArr.map(booking => {
+        {bookingsArr.map(booking => {
                return (
                    <div className='spotCard'>
                        <Link key={booking.Spots?.name} to={`/spots/${booking.Spots?.id}`}>
