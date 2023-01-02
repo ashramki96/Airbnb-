@@ -8,6 +8,7 @@
 }
 
 .results-dropdown{
+    width: 350px;
     position: absolute;
     top: 100%;
     left: 40%;
@@ -15,7 +16,7 @@
     z-index: 1;
     background-color: white;
     font-style: italic;
-    font-weight: bold;
+    
 }
 
 .spot-result{
