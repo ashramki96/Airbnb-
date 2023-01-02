@@ -1,0 +1,30 @@
+
+
+.search-bar-container{
+    width: 350px;
+    padding: 0;
+    position: absolute;
+    left: 40%;
+}
+
+.results-dropdown{
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    border: 1px solid white;
+    z-index: 1;
+    background-color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.spot-result{
+    padding: 15px;
+    cursor: pointer;
+}
+
+.spot-result:hover{
+    font-weight: bold;
+    background-color: #e6005c;
+    color: white;
+}

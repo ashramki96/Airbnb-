@@ -10,6 +10,7 @@ import CreateSpotForm from '../CreateSpotForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Navigation.css'
 import { useState, useEffect } from "react";
+import SearchBar from '../SearchBar';
 
 
 // function Navigation({ isLoaded }){
@@ -56,7 +57,9 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       {/* <CreateSpotForm /> */}
+      <SearchBar />
       <ProfileButton user={sessionUser} />
+      
       </>
     );
 
