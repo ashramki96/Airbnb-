@@ -22,10 +22,12 @@
 .spot-result{
     padding: 15px;
     cursor: pointer;
+    box-shadow: 1px 3px 6px 1px lightgray;
 }
 
 .spot-result:hover{
     font-weight: bold;
     background-color: #e6005c;
     color: white;
+    box-shadow: 1px 3px 6px 1px lightgray;
 }
