@@ -1,17 +1,17 @@
 
 
 .search-bar-container{
-    width: 350px;
+    width: 450px;
     padding: 0;
     position: absolute;
-    left: 40%;
+    left: 35%;
 }
 
 .results-dropdown{
-    width: 350px;
+    width: 450px;
     position: absolute;
     top: 100%;
-    left: 40%;
+    left: 35%;
     border: 1px solid white;
     z-index: 1;
     background-color: white;
@@ -22,12 +22,73 @@
 .spot-result{
     padding: 15px;
     cursor: pointer;
-    box-shadow: 1px 3px 6px 1px lightgray;
+    box-shadow: 1px 1px 1px 1px lightgray;
 }
 
 .spot-result:hover{
     font-weight: bold;
     background-color: #e6005c;
     color: white;
-    box-shadow: 1px 3px 6px 1px lightgray;
+    box-shadow: 1px 1px 1px 1px lightgray;
 }
+
+.search-bar{
+    display: flex;
+}
+
+.search-button{
+/* float: right; */
+  padding: 6px 9px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  /* margin-right: 16px; */
+  background: white;
+  color: black;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+    
+}
+
+.filter-button{
+    padding: 6px 9px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    /* margin-right: 16px; */
+    background: white;
+    color: #e6005c;
+    font-size: 19px;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-dropdown{
+    width: 250px;
+    position: absolute;
+    top: 100%;
+    left: 1%;
+    z-index: 1;
+    background-color: white;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    padding: none;
+    margin: none;
+
+}
+
+.filter-options{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filter-options:hover{
+    background-color: #e6005c; 
+    color: white;
+}
+
+.filter-options:target{
+ background-color: #e6005c; 
+}
+
+
