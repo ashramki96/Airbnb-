@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Link, Route, useParams } from 'react-router-dom';
+import { Link, Route, useParams, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -50,14 +50,14 @@ import SearchBar from '../SearchBar';
 // export default Navigation;
 
 function Navigation({ isLoaded }){
-
+  const location = useLocation();
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
     sessionLinks = (
       <>
       {/* <CreateSpotForm /> */}
-      <SearchBar />
+      {location.pathname === '/' ? <SearchBar />: null}
       <ProfileButton user={sessionUser} />
       
       </>

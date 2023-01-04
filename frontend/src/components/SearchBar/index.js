@@ -127,11 +127,16 @@ export default function SearchBar() {
                     <div className="results-dropdown">
                         {searchResults.map(spot => {
                             return (
-                                <NavLink key={spot.name} to={`/spots/${spot.id}`} onClick = {() => setSearch('')}>
-                                <div className="spot-result">
+                                // <NavLink key={spot.name} to={`/spots/${spot.id}`} onClick = {() => { setSearch('') 
+                                //                                                                 setShowFilter(!showFilter)
+                                //                                                                 clearSearchFilters()}}>
+                                <div className="spot-result" onClick = {() => { history.push(`/spots/${spot.id}`)
+                                    setSearch('') 
+                                                                                                setShowFilter(!showFilter)
+                                                                                                clearSearchFilters()}}>
                                     {spot.name} - <i class="fa-sharp fa-solid fa-star fa-xs"></i>{spot.avgRating} - ${spot.price}
                                 </div>
-                                </NavLink>
+                                // </NavLink>
                             )
                         })}
                     </div>
