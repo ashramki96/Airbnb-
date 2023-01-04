@@ -22,7 +22,13 @@
 .spot-result{
     padding: 15px;
     cursor: pointer;
+    
+}
+
+.spot-result-none{
+    padding: 15px;
     box-shadow: 1px 1px 1px 1px lightgray;
+    text-align: center;
 }
 
 .spot-result:hover{

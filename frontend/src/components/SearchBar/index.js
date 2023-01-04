@@ -129,7 +129,7 @@ export default function SearchBar() {
         <div className = "results-container">
             {showSearchFilter === false || search === '' ? null : 
                     <div className="results-dropdown">
-                        {searchResults.map(spot => {
+                        {searchResults.length > 0 ? searchResults.map(spot => {
                             return (
                                 // <NavLink key={spot.name} to={`/spots/${spot.id}`} onClick = {() => { setSearch('') 
                                 //                                                                 setShowFilter(!showFilter)
@@ -142,7 +142,7 @@ export default function SearchBar() {
                                 </div>
                                 // </NavLink>
                             )
-                        })}
+                        }): <div className = "spot-result-none">No results found</div>}
                     </div>
                 
                 
