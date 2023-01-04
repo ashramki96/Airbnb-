@@ -99,6 +99,18 @@
 .filter-options:hover{
     background-color: #e6005c; 
     color: white;
+    font-weight: bold;
+}
+
+.filter-options-selected{
+    background-color: #e6005c; 
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    font-style: italic;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    margin: 5px;
 }
 
 
@@ -122,4 +134,10 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.current-filters{
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(247, 243, 243)
 }

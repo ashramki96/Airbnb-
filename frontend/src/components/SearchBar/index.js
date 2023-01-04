@@ -53,10 +53,14 @@ export default function SearchBar() {
     //     event.target.style.color = 'white';
     //   });
  
-    
+    const clearSearchFilters = async () => {
+        setRatingFilter(0)
+        setPriceFilter(5000)
+    }
   
     const filterSubmitHandler = async () => {
         setShowFilter(!showFilter)
+        setSearch("")
     }
 
     const filteredBySearch = spotsArr.filter(spot => spot.state.toUpperCase() === search.toUpperCase())
@@ -84,21 +88,26 @@ export default function SearchBar() {
                         
                         <div className = "filter-container-left">
                         <div className = "filter-title">Price</div>
-                          <div id = "two-price" className = "filter-options" onClick={() => setPriceFilter(200)}>Under $200/night</div>
-                          <div id = "four-price" className = "filter-options" onClick={() => setPriceFilter(400)}>Under $400/night</div>
-                          <div id = "five-price" className = "filter-options" onClick={() => setPriceFilter(500)}>Under $500/night</div>
+                          {priceFilter !== 200 ? <div id = "two-price" className = "filter-options" onClick={() => setPriceFilter(200)}>Under $200/night</div> : <div id = "two-price" className = "filter-options-selected" onClick={() => setPriceFilter(200)}>Under $200/night</div>}
+                          {priceFilter !== 400 ? <div id = "four-price" className = "filter-options" onClick={() => setPriceFilter(400)}>Under $400/night</div> : <div id = "four-price" className = "filter-options-selected" onClick={() => setPriceFilter(400)}>Under $400/night</div>}
+                          {priceFilter !== 500 ? <div id = "five-price" className = "filter-options" onClick={() => setPriceFilter(500)}>Under $500/night</div> : <div id = "five-price" className = "filter-options-selected" onClick={() => setPriceFilter(500)}>Under $500/night</div>}
                         </div>
 
                         <div className = "filter-container-right">
                         <div className = "filter-title">Ratings</div>
-                          <div id = "two-rating" className = "filter-options" onClick={() => setRatingFilter(2)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>2</div>
-                          <div id = "three-rating" className = "filter-options" onClick={() => setRatingFilter(3)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>3</div>
-                          <div id = "four-rating" className = "filter-options" onClick={() => setRatingFilter(4)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>4</div>
+                          {ratingFilter !== 2 ? <div id = "two-rating" className = "filter-options" onClick={() => setRatingFilter(2)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>2</div> : <div id = "two-rating" className = "filter-options-selected" onClick={() => setRatingFilter(2)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>2</div>}
+                          {ratingFilter !== 3 ? <div id = "three-rating" className = "filter-options" onClick={() => setRatingFilter(3)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>3</div> : <div id = "three-rating" className = "filter-options-selected" onClick={() => setRatingFilter(3)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>3</div>}
+                          {ratingFilter !== 4 ? <div id = "four-rating" className = "filter-options" onClick={() => setRatingFilter(4)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>4</div> :  <div id = "four-rating" className = "filter-options-selected" onClick={() => setRatingFilter(4)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>4</div>}
                         </div>
 
                         
+                        
                         </div>
-                        <div className = "clear-filters">Clear Search Filters</div>
+
+                        
+                        {/* <div className = "current-filters">Filters Selected: {ratingFilter === 0 && priceFilter === 5000 ? <>None</> : <>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>{ratingFilter} and Under ${priceFilter}</>} </div> */}
+                        
+                        <div className = "clear-filters" onClick = {() => clearSearchFilters()}>Clear Search Filters</div>
                         </div> : null}
 
                                         <input className='search-text'
@@ -107,6 +116,8 @@ export default function SearchBar() {
                                             value={search}
                                             onChange={e => setSearch(e.target.value)} />
                                         <button className="search-button" type="submit"><i class="fa fa-search"></i></button>
+                                        {/* <div>Over {ratingFilter}</div>
+                                        <div>Over {priceFilter}</div> */}
 
                 </div>
         </div>
