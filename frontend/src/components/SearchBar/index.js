@@ -39,6 +39,21 @@ export default function SearchBar() {
 
     // const searchResults = filteredSpots(search, ratingFilter, priceFilter)
 
+    // const twoPrice = document.getElementById('two-price')
+    // const fourPrice = document.getElementById('four-price')
+    // const fivePrice = document.getElementById('five-price')
+
+    // const twoRating = document.getElementById('two-rating')
+    // const threeRating = document.getElementById('three-rating')
+    // const fourRating = document.getElementById('four-rating')
+
+    // twoPrice.addEventListener('click', function onClick(event) {
+    //     event.target.style.backgroundColor = 'red';
+
+    //     event.target.style.color = 'white';
+    //   });
+ 
+    
   
     const filterSubmitHandler = async () => {
         setShowFilter(!showFilter)
@@ -64,22 +79,26 @@ export default function SearchBar() {
                 <div className='search-bar'>
                     <button className="filter-button" onClick={() => filterSubmitHandler()}><i class="fa fa-light fa-filter"></i></button>
                     {showFilter && !search ?
-                        <div className="filter-dropdown">
+                    <div className = "filter-dropdown">
+                        <div className="filter-dropdown-inner">
                         
                         <div className = "filter-container-left">
-                          <div className = "filter-options">Under $200/night</div>
-                          <div className = "filter-options">Under $400/night</div>
-                          <div className = "filter-options">Under $500/night</div>
+                        <div className = "filter-title">Price</div>
+                          <div id = "two-price" className = "filter-options" onClick={() => setPriceFilter(200)}>Under $200/night</div>
+                          <div id = "four-price" className = "filter-options" onClick={() => setPriceFilter(400)}>Under $400/night</div>
+                          <div id = "five-price" className = "filter-options" onClick={() => setPriceFilter(500)}>Under $500/night</div>
                         </div>
 
                         <div className = "filter-container-right">
-                          <div className = "filter-options">Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>2</div>
-                          <div className = "filter-options">Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>3</div>
-                          <div className = "filter-options">Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>4</div>
+                        <div className = "filter-title">Ratings</div>
+                          <div id = "two-rating" className = "filter-options" onClick={() => setRatingFilter(2)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>2</div>
+                          <div id = "three-rating" className = "filter-options" onClick={() => setRatingFilter(3)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>3</div>
+                          <div id = "four-rating" className = "filter-options" onClick={() => setRatingFilter(4)}>Over <i class="fa-sharp fa-solid fa-star fa-xs"></i>4</div>
                         </div>
 
-
-
+                        
+                        </div>
+                        <div className = "clear-filters">Clear Search Filters</div>
                         </div> : null}
 
                                         <input className='search-text'
