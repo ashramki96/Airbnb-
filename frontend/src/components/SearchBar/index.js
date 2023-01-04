@@ -12,6 +12,7 @@ export default function SearchBar() {
     const [ratingFilter, setRatingFilter] = useState(0)
     const [priceFilter, setPriceFilter] = useState(5000)
     const [showFilter, setShowFilter] = useState(false)
+    const [showSearchFilter, setShowSearchFilter] = useState(true)
 
     useEffect(() => {
         dispatch(getSpots())
@@ -114,8 +115,11 @@ export default function SearchBar() {
                                             type="search"
                                             placeholder="What state are you visiting?"
                                             value={search}
-                                            onChange={e => setSearch(e.target.value)} />
-                                        <button className="search-button" type="submit"><i class="fa fa-search"></i></button>
+                                            onChange={e => { setShowSearchFilter(true)
+                                                setSearch(e.target.value)}} />
+                                        <button className="search-button" type="submit" onClick = {() => { setShowFilter(!showFilter)
+                                        setShowSearchFilter(false)
+                                            history.push(`/searchresults/${ratingFilter}/${priceFilter}/${search}`)}}><i class="fa fa-search"></i></button>
                                         {/* <div>Over {ratingFilter}</div>
                                         <div>Over {priceFilter}</div> */}
 
@@ -123,7 +127,7 @@ export default function SearchBar() {
         </div>
 
         <div className = "results-container">
-            {search === '' ? null : 
+            {showSearchFilter === false || search === '' ? null : 
                     <div className="results-dropdown">
                         {searchResults.map(spot => {
                             return (
@@ -132,7 +136,7 @@ export default function SearchBar() {
                                 //                                                                 clearSearchFilters()}}>
                                 <div className="spot-result" onClick = {() => { history.push(`/spots/${spot.id}`)
                                     setSearch('') 
-                                                                                                setShowFilter(!showFilter)
+                                                                                                
                                                                                                 clearSearchFilters()}}>
                                     {spot.name} - <i class="fa-sharp fa-solid fa-star fa-xs"></i>{spot.avgRating} - ${spot.price}
                                 </div>

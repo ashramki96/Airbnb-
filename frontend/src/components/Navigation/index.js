@@ -57,7 +57,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       {/* <CreateSpotForm /> */}
-      {location.pathname === '/' ? <SearchBar />: null}
+      {location.pathname === '/' || location.pathname.includes("searchresults") ? <SearchBar />: null}
       <ProfileButton user={sessionUser} />
       
       </>

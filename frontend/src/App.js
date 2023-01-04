@@ -9,6 +9,7 @@ import SpotDetails from "./components/SpotDetails";
 import CreateSpotForm from "./components/CreateSpotForm";
 import AllSpotsCurrentUser from "./components/AllSpotsCurrentUser";
 import AllBookingsCurrentUser from "./components/AllBookingsCurrentUser";
+import SearchResults from "./components/SearchResults";
 
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
           <Route path="/spots/:spotId">
             <SpotDetails />
           </Route>
+          <Route path="/searchresults/:ratingFilter/:priceFilter/:search">
+            <SearchResults />
+          </Route>
+
           
         </Switch>
         

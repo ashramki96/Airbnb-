@@ -211,3 +211,8 @@ a:visited {
 .page-container{
     margin-bottom: 60px;
 }
+
+.results-on-search{
+    margin-top: 40px;
+    text-align: center;
+}
