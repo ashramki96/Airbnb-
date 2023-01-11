@@ -14,7 +14,7 @@ module.exports = {
     await queryInterface.bulkInsert('SpotImages', [
       {
         spotId: 1,
-        url: 'https://a0.muscache.com/im/pictures/66dbaf4a-b3aa-4b2f-b3f5-369a5151661e.jpg?im_w=1440',
+        url: 'https://images.ctfassets.net/r7p9m4b1iqbp/6Z2nsL6tub96On2hcZ6484/a876e061f2ebc8535615af51377992da/black-gables-a-frame-cabin-walhonding-ohio.jpg?w=1200&fm=webp&q=90',
         preview: true
       },
 
@@ -75,7 +75,7 @@ module.exports = {
       },
       {
         spotId: 12,
-        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-713917162858023105/original/81f0c550-7e2c-4107-b48d-40d94617d66f.jpeg?im_w=720',
+        url: 'https://images.ctfassets.net/r7p9m4b1iqbp/3vHVNUDzVg5KMdOoYX07Ap/3b28c87a3fe38e98581bffda2f6b413f/Washington-Index-Treeframe-Cabin-Exterior.jpg?w=1200&fm=webp&q=90',
         preview: true
       },
       {
@@ -95,7 +95,7 @@ module.exports = {
       },
       {
         spotId: 16,
-        url: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-20536744/original/068965dd-9f59-40ee-8754-9798114bf6eb.jpeg?im_w=1200',
+        url: 'https://images.ctfassets.net/r7p9m4b1iqbp/SQT2lKh294vo6EiWlcG1L/f98ba06d4bf19800641c14dc33ac7b21/sugar-grove-north-carolina-appalachian-a-frame-exterior.jpg?w=1200&fm=webp&q=90',
         preview: true
       },
 
