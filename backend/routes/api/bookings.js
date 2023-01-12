@@ -5,6 +5,7 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { requireAuth } = require('../../utils/auth');
 const user = require('../../db/models/user');
 const booking = require('../../db/models/booking');
+const { Op } = require("sequelize");
 
 const router = express.Router();
 
@@ -109,7 +110,12 @@ router.put('/:bookingid', requireAuth, async (req, res) => {
   let bothDatesError = []
   //has to be in spot routes so it's based on one spot not all spot bookings
   const bookedDates = await Booking.findAll({
-    attributes: ["startDate", "endDate"], raw: true, nest: true
+    attributes: ["startDate", "endDate"], raw: true, nest: true,
+    where: {
+      id:{
+        [Op.not]: booking.id
+      }
+    }
   })
 
   for (let i = 0; i < bookedDates.length; i++) {
