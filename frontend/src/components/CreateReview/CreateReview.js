@@ -55,7 +55,7 @@ const CreateReview = ({closeProp}) => {
         dispatch(getReviews(spotId))
         closeProp()
         // .then(() => dispatch(getSpots()))
-        console.log("CREATED REVIEW IS ", createdReview)
+        
     }
 
     return (

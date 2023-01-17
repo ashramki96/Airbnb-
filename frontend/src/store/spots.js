@@ -55,7 +55,7 @@ export const getOneSpot = (spotId) => async (dispatch) => {
     
     if(response.ok) {
         const spot = await response.json();
-        console.log("THE SPOT ISS", spot)
+        
         dispatch(readOne(spot))
         return response
 
@@ -66,9 +66,7 @@ export const getOneSpot = (spotId) => async (dispatch) => {
 
 export const createSpot = (imagePayload, payload) => async dispatch => {
 
-    console.log("thunk Create is being hit")
-    console.log("spot is", payload)
-    console.log("image payload is ", imagePayload)
+    
     
         const response = await csrfFetch('/api/spots', {
             method: 'POST',
@@ -81,11 +79,11 @@ export const createSpot = (imagePayload, payload) => async dispatch => {
         let imgResponse
         let spot
 
-        console.log("RESPONSE" , response)
+        
         if(response.ok) {
         spot = await response.json();
         
-        console.log("SPOT ID is", spot.id)
+        
 
          imgResponse = await csrfFetch(`/api/spots/${spot.id}/images`, {
                 method: 'POST',
@@ -97,7 +95,7 @@ export const createSpot = (imagePayload, payload) => async dispatch => {
 
         }
 
-        console.log("Image response is" , imgResponse)
+        
         
         if(response.ok && imgResponse.ok){
             dispatch(create(spot))
@@ -107,8 +105,7 @@ export const createSpot = (imagePayload, payload) => async dispatch => {
 }
 
 export const updateSpot = data => async dispatch => {
-    console.log("DATA is" , data)
-    console.log("DATA ID is", data.id)
+   
     const response = await csrfFetch(`/api/spots/${data.id}`, {
         method: 'PUT',
         headers: {
@@ -127,7 +124,7 @@ export const updateSpot = data => async dispatch => {
 
 export const getSpots = () => async (dispatch) => {
     const response = await fetch('/api/spots');
-    console.log("RESPONSE", response)
+    
     if(response.ok) {
         const spots = await response.json();
         dispatch(read(spots))

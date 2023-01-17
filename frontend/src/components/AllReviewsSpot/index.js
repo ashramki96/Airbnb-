@@ -18,7 +18,7 @@ const AllReviewsSpot = () => {
     const spotsArr = useSelector(state => Object.values(state.spots))
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
 
-    console.log("REVIEWS, this spot is", spot)
+   
 
     
 
@@ -28,7 +28,7 @@ const AllReviewsSpot = () => {
     
    const allReviews = useSelector(state => Object.values(state.reviews))
    const reviews = allReviews.filter(review => review.spotId === +spotId)
-   console.log("REVIEWS ARE ", reviews)
+   
 
    const handleDelete = async (reviewId) => {
     

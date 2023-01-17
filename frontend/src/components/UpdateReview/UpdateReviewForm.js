@@ -19,7 +19,7 @@ const UpdateReviewForm = ({closeProp, currReview}) => {
     const spotsArr = useSelector(state => Object.values(state.spots))
     const currentSpot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
 
-    console.log("currReview is ", currReview)
+   
     
     
 
@@ -56,7 +56,7 @@ const UpdateReviewForm = ({closeProp, currReview}) => {
         dispatch(getReviews(spotId))
         closeProp()
         // .then(() => dispatch(getSpots()))
-        console.log("CREATED REVIEW IS ", createdReview)
+        
     }
 
     return (

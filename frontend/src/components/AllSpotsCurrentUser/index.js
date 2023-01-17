@@ -11,12 +11,12 @@ const AllSpotsCurrentUser = () => {
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.session.user.id )
-    console.log("USER ID is", userId)
+    
     const spots = useSelector(state => state.spots)
     const spotsArr = Object.values(spots)
-    console.log(" ALL SPOTS" , spotsArr)
+    
     const userSpots = spotsArr.filter(spot => spot.ownerId === userId )
-    console.log("User's spots are ", userSpots)
+    
    
 
     useEffect(() => {{

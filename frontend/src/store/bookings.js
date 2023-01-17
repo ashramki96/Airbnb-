@@ -27,7 +27,7 @@ const deleteAction = booking => ({
 })
 
 export const deletebooking = (bookingId) => async dispatch => {
-    console.log("booking TO BE DELETED IS", bookingId)
+    
     const response = await csrfFetch(`/api/bookings/${bookingId}`, {
         method: 'DELETE',
     })
@@ -37,27 +37,27 @@ export const deletebooking = (bookingId) => async dispatch => {
 }
 
 export const getbookings = (spotid) => async (dispatch) => {
-    console.log("DID THIS WORK 9")
+    
     const response = await fetch(`/api/spots/${parseInt(spotid)}/bookings`);
     if(response.ok) {
         const bookings = await response.json();
-        console.log("bookings is", bookings)
+        
         dispatch(read(bookings))
     }
 }
 
 export const getUserbookings = () => async (dispatch) => {
-    console.log("DID THIS WORK 10")
+    
     const response = await fetch(`/api/bookings/current`);
     if(response.ok) {
         const bookings = await response.json();
-        console.log("user bookings is", bookings)
+        
         dispatch(read(bookings))
     }
 }
 
 export const createbooking = (bookingPayload, spotid) => async dispatch => {
-    console.log("DID THIS WORK 2")
+    
     const response = await csrfFetch(`/api/spots/${parseInt(spotid)}/bookings`, {
         method: 'POST',
         headers: {
@@ -68,14 +68,14 @@ export const createbooking = (bookingPayload, spotid) => async dispatch => {
 
     if(response.ok) {
         const booking = await response.json()
-        console.log("Booking is", booking)
+        
         dispatch(create(booking))
         return booking
     }
 }
 
 export const updatebooking = (bookingPayload, bookingid) => async dispatch => {
-    console.log("DID THIS WORK 3")
+    
     const response = await csrfFetch(`/api/bookings/${bookingid}`, {
         method: 'PUT',
         headers: {

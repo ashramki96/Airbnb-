@@ -8,10 +8,10 @@ import { getSpots, getOneSpot } from '../../store/spots';
 
 const UpdateSpotForm = ({closeProp}) => {
   const { spotId } = useParams()
-  console.log("update is being rendered")
+  
   const spotsArr = useSelector(state => Object.values(state.spots))
   const currentSpot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
-  console.log("THE CURRENT SPOT IS", currentSpot)
+  
 
 
   const dispatch = useDispatch();

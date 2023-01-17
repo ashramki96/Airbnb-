@@ -27,7 +27,7 @@ const deleteAction = review => ({
 })
 
 export const deleteReview = (reviewId) => async dispatch => {
-    console.log("REVIEW TO BE DELETED IS", reviewId)
+    
     const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
     })
@@ -37,7 +37,7 @@ export const deleteReview = (reviewId) => async dispatch => {
 }
 
 export const getReviews = (spotid) => async (dispatch) => {
-    console.log("DID THIS WORK 1")
+    
     const response = await fetch(`/api/spots/${spotid}/reviews`);
     if(response.ok) {
         const reviews = await response.json();
@@ -46,7 +46,7 @@ export const getReviews = (spotid) => async (dispatch) => {
 }
 
 export const createReview = (reviewPayload, spotId) => async dispatch => {
-    console.log("DID THIS WORK 2")
+    
     const response = await csrfFetch(`/api/spots/${spotId}/reviews`, {
         method: 'POST',
         headers: {
@@ -63,7 +63,7 @@ export const createReview = (reviewPayload, spotId) => async dispatch => {
 }
 
 export const updateReview = (reviewPayload, spotId, reviewid) => async dispatch => {
-    console.log("DID THIS WORK 3")
+    
     const response = await csrfFetch(`/api/reviews/${reviewid}`, {
         method: 'PUT',
         headers: {

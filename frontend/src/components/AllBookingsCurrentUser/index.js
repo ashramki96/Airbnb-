@@ -14,7 +14,7 @@ const AllBookingsCurrentUser = () => {
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.session.user.id )
-    console.log("USER ID is", userId)
+    
     const bookings = useSelector(state => Object.values(state.bookings))
     const userBookings = bookings.filter(booking => booking.userId === userId )
     const bookingsArr = userBookings

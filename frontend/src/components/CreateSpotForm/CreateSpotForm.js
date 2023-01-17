@@ -8,7 +8,7 @@ import { getSpots } from '../../store/spots';
 
 const CreateSpotForm = ({closeProp}) => {
 
-  console.log("This is being rendered")
+  
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -79,7 +79,7 @@ const CreateSpotForm = ({closeProp}) => {
 
         const createdSpot = await dispatch(createSpot(imagePayload, payload))
         closeProp()
-        console.log("Payload id is", createdSpot.id)
+        
 
          history.push(`/spots/${createdSpot.id}`)
       }

@@ -69,11 +69,7 @@ export default function SearchBar() {
     const filteredByPrice = filteredByRating.filter(spot => spot.price < priceFilter )
 
     let searchResults = filteredByPrice
-    console.log("Spots Array is", spotsArr)
-    console.log("Filtered by search", filteredBySearch)
-    console.log("Filtered by rating", filteredByRating)
-    console.log("Filtered by Price", filteredByPrice)
-    console.log("SEARCH RESULTS ARE", searchResults)
+   
 
 
 

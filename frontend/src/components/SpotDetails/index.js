@@ -43,7 +43,7 @@ const SpotDetails = () => {
     // }, [dispatch, spotId])
 
     useEffect(() => {
-        console.log("Did this work")
+        
         dispatch(getOneSpot(spotId));
         dispatch(getReviews(spotId));
         dispatch(getbookings(spotId));
@@ -51,14 +51,14 @@ const SpotDetails = () => {
     }, [spotId])
 
     
-    console.log("SPOT ID IS ", spotId)
+    
     const spotsArr = useSelector(state => Object.values(state.spots))
-    console.log("THIS IS THE ARRAY", spotsArr)
+    
     const spot = spotsArr.find(singleSpot => singleSpot.id === +spotId)
     if (!spot) return null
     if(!spot.SpotImages) return null
     const spotOwnerId = spot.ownerId
-    console.log("THE SPOT IS", spot)
+   
 
 
 
