@@ -21,7 +21,7 @@ module.exports = {
           country: "USA",
           lat: 12.2323,
           lng: 12.3434,
-          name: "A-Frame cabin in the mountains of NC",
+          name: "A-Frame cabin in the mountains of Cali",
           description: "Our goal was to create a space that you could either choose to escape the hustle and bustle of life and relax taking in the scenery.",
           price: 300
       },
@@ -45,7 +45,7 @@ module.exports = {
           country: "USA",
           lat: 14.2324,
           lng: 14.3434,
-          name: "Maple Haven - A Charming Lake Michigan Tree House",
+          name: "Maple Haven - A Charming Tree House",
           description: "Come immerse yourself with the peace and tranquility that South Haven has to offer. ",
           price: 450
       },
