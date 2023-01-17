@@ -46,7 +46,7 @@ module.exports = {
           lat: 14.2324,
           lng: 14.3434,
           name: "Maple Haven - A Charming Lake Michigan Tree House",
-          description: "Come immerse yourself with the peace and tranquility that Lake Michigan has to offer. ",
+          description: "Come immerse yourself with the peace and tranquility that South Haven has to offer. ",
           price: 450
       },
       {
@@ -58,7 +58,7 @@ module.exports = {
         lat: 12.23323,
         lng: 12.33434,
         name: "Goth A-frame!",
-        description: "Make some memories at this unique and family-friendly Aframe in Harbert, MI. Built in 2021, the Harbert Hideout is located on a quiet street surrounded by nature. ",
+        description: "Make some memories at this unique and family-friendly Aframe. Built in 2021, the Harbert Hideout is located on a quiet street surrounded by nature. ",
         price: 370
     },
     {
@@ -167,7 +167,7 @@ module.exports = {
     {
       ownerId: 3,
         address: "1234 thirteenth drive",
-        city: "Insbrook",
+        city: "Innsbrook",
         state: "Seattle",
         country: "USA",
         lat: 14.243232423434676,
@@ -199,7 +199,7 @@ module.exports = {
         lat: 14.243246764534,
         lng: 14.3443676445435,
         name: "Secluded Rustic Home",
-        description: "Secluded Rustic Home on Lake Michigan ",
+        description: "Secluded Rustic Home in beautiful South Haven ",
         price: 150
     },
 
