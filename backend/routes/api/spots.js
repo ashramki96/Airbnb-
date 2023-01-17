@@ -405,6 +405,8 @@ router.post('/:spotid/bookings', requireAuth, async (req, res) => {
   spotid = parseInt(spotid)
   let start = Date.parse(startDate) //324234343242
   let end = Date.parse(endDate) //23434324324
+  let now = Date.now()
+ 
   if (end <= start) {
     res.statusCode = 400
     return res.json({
@@ -412,6 +414,17 @@ router.post('/:spotid/bookings', requireAuth, async (req, res) => {
       statusCode: 400,
       errors: {
         "endDate": "endDate cannot be on or before startDate"
+      }
+    })
+  }
+
+  if (start < now) {
+    res.statusCode = 400
+    return res.json({
+      message: "Can't make a booking before today",
+      statusCode: 400,
+      errors: {
+        "Check-in": "Check-in can't be before today"
       }
     })
   }
