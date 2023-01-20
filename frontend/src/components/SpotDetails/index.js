@@ -107,7 +107,7 @@ const SpotDetails = () => {
              <div className = "spotPoints"> <i class="fa-solid fa-location-dot"></i><span id ="greatLocation">  New Location</span></div>
             <div className = "belowSpotPoints">This location doesn't have a rating yet</div>
             <div className = "spotPoints"><i class="fa-solid fa-key"></i><span id ="greatCheckin"> Great check-in experience</span></div>
-            <div className = "belowSpotPoints">The host promises a smooth check-in experience. Be the first to find out!</div>
+            <div className = "belowSpotPoints">The host promises a smooth check-in experience.</div>
             <div className = "spotPoints"><i class="fa-solid fa-calendar"></i> <span id ="freeCancel"> Free cancellation for 48 hours</span></div>
             <div className = "borderAircover"></div>
             <img className = "aircover" src = "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
