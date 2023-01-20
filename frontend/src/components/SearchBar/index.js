@@ -65,7 +65,8 @@ export default function SearchBar() {
     }
 
     const filteredBySearch = spotsArr.filter(spot => spot.state.toUpperCase() === search.toUpperCase())
-    const filteredByRating = filteredBySearch.filter(spot => spot.avgRating > ratingFilter)
+    
+    const filteredByRating = filteredBySearch.filter(spot => spot.avgRating ? spot.avgRating > ratingFilter: spot.state.toUpperCase() === search.toUpperCase())
     const filteredByPrice = filteredByRating.filter(spot => spot.price < priceFilter )
 
     let searchResults = filteredByPrice
