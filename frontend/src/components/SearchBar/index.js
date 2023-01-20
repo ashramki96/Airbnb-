@@ -64,9 +64,9 @@ export default function SearchBar() {
         setSearch("")
     }
 
-    const filteredBySearch = spotsArr.filter(spot => spot.state.toUpperCase() === search.toUpperCase())
+    const filteredBySearch = spotsArr.filter(spot => spot.state.toUpperCase().includes(search.toUpperCase()))
     
-    const filteredByRating = filteredBySearch.filter(spot => spot.avgRating ? spot.avgRating > ratingFilter: spot.state.toUpperCase() === search.toUpperCase())
+    const filteredByRating = filteredBySearch.filter(spot => spot.avgRating ? spot.avgRating > ratingFilter: spot.state.toUpperCase().includes(search.toUpperCase()))
     const filteredByPrice = filteredByRating.filter(spot => spot.price < priceFilter )
 
     let searchResults = filteredByPrice
@@ -135,7 +135,7 @@ export default function SearchBar() {
                                     setSearch('') 
                                                                                                 
                                                                                                 clearSearchFilters()}}>
-                                    {spot.name} - <i class="fa-sharp fa-solid fa-star fa-xs"></i>{spot.avgRating} - ${spot.price}
+                                    {spot.name} - {spot.state} - <i class="fa-sharp fa-solid fa-star fa-xs"></i>{spot.avgRating} - ${spot.price}
                                 </div>
                                 // </NavLink>
                             )
