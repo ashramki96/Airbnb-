@@ -96,7 +96,7 @@ router.get('/', validateQueries, async (req, res) => {
   let { page, size, minLat, maxLat, minLng, maxLng, minPrice, maxPrice } = req.query;
    // default page and size
    if (!page) page = 1;
-   if (!size) size = 20;
+   if (!size) size = 50;
    size = parseInt(size)
    page = parseInt(page)
    let where = {}
