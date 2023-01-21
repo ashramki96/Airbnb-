@@ -98,6 +98,92 @@ module.exports = {
         url: 'https://images.ctfassets.net/r7p9m4b1iqbp/SQT2lKh294vo6EiWlcG1L/f98ba06d4bf19800641c14dc33ac7b21/sugar-grove-north-carolina-appalachian-a-frame-exterior.jpg?w=1200&fm=webp&q=90',
         preview: true
       },
+      {
+        spotId: 17,
+        url: 'https://pictures.lodgix.com/media/gallery/property-75953/i018511_preview.jpg',
+        preview: true
+      },
+
+      {
+        spotId: 18,
+        url: 'https://images.pexels.com/photos/803975/pexels-photo-803975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        preview: true
+      },
+
+      {
+        spotId: 19,
+        url: 'https://www.build-review.com/wp-content/uploads/2021/10/Cabin.jpg',
+        preview: true
+      },
+
+      {
+        spotId: 20,
+        url: 'https://www.christiesrealestate.com/blog/wp-content/uploads/2021/12/river-house-estate-telkwa-british-columbia-1.jpg',
+        preview: true
+      },
+
+      {
+        spotId: 21,
+        url: 'https://www.gannett-cdn.com/presto/2021/02/22/PMJS/bea98437-5223-4f79-9d4c-3ae1f13947e3-vikingcabin.jpg?crop=4031,2268,x0,y373&width=3200&height=1801&format=pjpg&auto=webp',
+        preview: true
+      },
+
+      {
+        spotId: 22,
+        url: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2FiaW58ZW58MHx8MHx8&w=1000&q=80',
+        preview: true
+      },
+
+      {
+        spotId: 23,
+        url: 'https://newyorkrentalbyowner.com/blog/wp-content/uploads/2020/01/Cayuga-Lake-vacation-rentals.jpg',
+        preview: true
+      },
+      {
+        spotId: 24,
+        url: 'https://images.mansionglobal.com/im-447463?width=1299&height=815',
+        preview: true
+      },
+      {
+        spotId: 25,
+        url: 'https://www.cabinsforyou.com/public/img/gatlinburg-cabin-rentals-drone-hero.jpg',
+        preview: true
+      },
+      {
+        spotId: 26,
+        url: 'https://media.mybnbwebsite.com/6550/pano_HH_1500x750.jpg',
+        preview: true
+      },
+      {
+        spotId: 27,
+        url: 'https://www.brysoncitycabinrentals.com/custimages/slide2.jpg',
+        preview: true
+      },
+      {
+        spotId: 28,
+        url: 'https://i.insider.com/62bd175269fbfd0018ee0419?width=1300&format=jpeg&auto=webp',
+        preview: true
+      },
+      {
+        spotId: 29,
+        url: 'https://i.insider.com/62bd198a69fbfd0018ee044d?width=1200&format=jpeg&auto=webp',
+        preview: true
+      },
+      {
+        spotId: 30,
+        url: 'https://i.insider.com/62bd188669fbfd0018ee0434?width=1200&format=jpeg&auto=webp',
+        preview: true
+      },
+      {
+        spotId: 31,
+        url: 'https://plus.unsplash.com/premium_photo-1670963964797-942df1804579?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+        preview: true
+      },
+      {
+        spotId: 32,
+        url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+        preview: true
+      },
 
     ]);
   },
