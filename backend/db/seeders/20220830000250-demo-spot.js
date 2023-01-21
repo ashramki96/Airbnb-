@@ -401,7 +401,7 @@ module.exports = {
     country: "USA",
     lat: 14.243246764534,
     lng: 14.3443676445435,
-    name: "Washinton Rustic Home",
+    name: "Washington Rustic Home",
     description: "Secluded Rustic Home in beautiful South Haven ",
     price: 150
 },
